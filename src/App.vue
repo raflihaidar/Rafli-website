@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-900 w-screen h-screen">
+  <div class="bg-slate-950 w-screen h-screen">
     <NavbarComponent />
     <router-view></router-view>
   </div>

@@ -1,9 +1,8 @@
 <template>
-  <nav class="w-[80%] mx-auto flex justify-center py-5">
-    <section class="w-[80%] text-slate-200 font-bold transition-colors text-lg flex justify-between cursor-pointer">
-      <router-link class="hover:text-green-700 py-2 px-3 rounded-lg"
-        :class="item.status ? 'bg-green-700 hover:text-white' : ''" v-for="(item, index) in navigationMenu" :key="index"
-        :to="item.page" @click="handleClick(index)">
+  <nav class="w-screen mx-auto flex justify-center py-5 bg-sky-950">
+    <section class="w-[40%] text-slate-200 font-semibold transition-colors text-lg flex justify-between cursor-pointer">
+      <router-link class="py-2 px-3 rounded-lg" :class="item.status ? 'bg-green-700 text-white' : 'hover:text-green-700'"
+        v-for="(item, index) in navigationMenu" :key="index" :to="item.page" @click="handleClick(index)">
         {{ item.name }}
       </router-link>
     </section>
@@ -11,7 +10,9 @@
 </template>
 
 <script setup>
-import { reactive } from 'vue'
+import { onMounted, reactive } from 'vue'
+import { useRouter } from 'vue-router';
+const router = useRouter()
 let navigationMenu = reactive([
   {
     name: 'Home',
@@ -26,11 +27,6 @@ let navigationMenu = reactive([
   {
     name: 'Education',
     page: '/education',
-    status: false
-  },
-  {
-    name: 'Experience',
-    page: '/experience',
     status: false
   },
   {
@@ -51,12 +47,17 @@ let navigationMenu = reactive([
 ])
 
 const handleClick = (index) => {
-  for (const item of navigationMenu) {
-    if (item.status) {
-      item.status = false;
-    }
-  }
-
+  navigationMenu.forEach((item) => {
+    if (item.status) item.status = false
+  })
   navigationMenu[index].status = !navigationMenu[index].status
 }
+
+onMounted(() => {
+  navigationMenu.forEach((item) => {
+    if (item.status) {
+      router.push({ path: item.page })
+    }
+  })
+})
 </script>

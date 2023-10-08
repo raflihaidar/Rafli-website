@@ -10,19 +10,19 @@
     </section>
     <section class="w-[15%] gap-x-5 flex justify-between">
       <a class="w-auto bg-gray-800 hover:bg-green-700 transition-colors cursor-pointer rounded-full p-3"
-        href="https://www.instagram.com/raflihaidar_n" target="_blank">
+        href="https://www.instagram.com/raflihaidar_n" target="_blank" aria-label="Instagram">
         <InstagramIcon />
       </a>
       <a class="w-auto bg-gray-800 hover:bg-green-700 transition-colors cursor-pointer rounded-full p-3"
-        href="https://github.com/raflihaidar" target="_blank">
+        href="https://github.com/raflihaidar" target="_blank" aria-label="Github">
         <GithubIcon />
       </a>
       <a class="w-auto bg-gray-800 hover:bg-green-700 transition-colors cursor-pointer rounded-full p-3"
-        href="https://www.linkedin.com/in/rafli-haidar-nashif/" target="_blank">
+        href="https://www.linkedin.com/in/rafli-haidar-nashif/" target="_blank" aria-label="Linkedin">
         <LinkedinIcon />
       </a>
       <a class="w-auto bg-gray-800 hover:bg-green-700 transition-colors cursor-pointer rounded-full p-3"
-        href="mailto:www.rafli.haidar30@gmail.com" target="_blank">
+        href="mailto:www.rafli.haidar30@gmail.com" target="_blank" aria-label="Email">
         <EmailIcon />
       </a>
     </section>
@@ -34,7 +34,7 @@ import InstagramIcon from "../components/icons/InstagramIcon.vue"
 import GithubIcon from "../components/icons/GithubIcon.vue"
 import LinkedinIcon from "../components/icons/LinkedinIcon.vue"
 import EmailIcon from "../components/icons/EmailIcon.vue"
-import { onMounted, ref } from 'vue';
+import { ref } from 'vue';
 
 let stringIndex = 0;
 let typedStatus = ref(true);
@@ -64,5 +64,5 @@ const typedText = () => {
   }
 }
 
-onMounted(() => typedText());
+typedText()
 </script>
