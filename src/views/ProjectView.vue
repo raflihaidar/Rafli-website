@@ -8,14 +8,14 @@
           <span>
             <p>Mitra Pasar</p>
             <div class="mt-3 border-4 border-slate-200">
-              <img src="../assets/img/Mitra Pasar.jpg" alt="mitra pasar" class="w-full">
+              <img src="../assets/img/Mitra_Pasar.jpg" alt="mitra pasar" class="w-full">
             </div>
           </span>
 
           <span>
             <p>Student Service Center</p>
             <div class="mt-3 border-4 border-slate-200">
-              <img src="../assets/img/Web SSC.jpg" alt="ssc" class="w-full">
+              <img src="../assets/img/Web_SSC.jpg" alt="ssc" class="w-full">
             </div>
           </span>
 
