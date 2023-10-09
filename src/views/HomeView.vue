@@ -9,22 +9,18 @@
       <span class="w-[3px] ml-[4px] inline-block bg-white" :class="!typedStatus ? 'animate-blink' : ''">&nbsp;</span>
     </section>
     <section class="w-[15%] gap-x-5 flex justify-between">
-      <a class="w-auto bg-gray-800 hover:bg-green-700 transition-colors cursor-pointer rounded-full p-3"
-        href="https://www.instagram.com/raflihaidar_n" target="_blank" aria-label="Instagram">
+      <span class="w-auto bg-gray-800 hover:bg-green-700 transition-colors cursor-pointer rounded-full p-3">
         <InstagramIcon />
-      </a>
-      <a class="w-auto bg-gray-800 hover:bg-green-700 transition-colors cursor-pointer rounded-full p-3"
-        href="https://github.com/raflihaidar" target="_blank" aria-label="Github">
+      </span>
+      <span class="w-auto bg-gray-800 hover:bg-green-700 transition-colors cursor-pointer rounded-full p-3">
         <GithubIcon />
-      </a>
-      <a class="w-auto bg-gray-800 hover:bg-green-700 transition-colors cursor-pointer rounded-full p-3"
-        href="https://www.linkedin.com/in/rafli-haidar-nashif/" target="_blank" aria-label="Linkedin">
+      </span>
+      <span class="w-auto bg-gray-800 hover:bg-green-700 transition-colors cursor-pointer rounded-full p-3">
         <LinkedinIcon />
-      </a>
-      <a class="w-auto bg-gray-800 hover:bg-green-700 transition-colors cursor-pointer rounded-full p-3"
-        href="mailto:www.rafli.haidar30@gmail.com" target="_blank" aria-label="Email">
-        <EmailIcon />
-      </a>
+      </span>
+      <span class="w-auto bg-gray-800 hover:bg-green-700 transition-colors cursor-pointer rounded-full p-3">
+        <EmailIcon size="1" />
+      </span>
     </section>
   </main>
 </template>
