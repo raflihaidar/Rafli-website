@@ -1,6 +1,6 @@
 <template>
   <nav class="w-screen">
-    <div class="w-full lg:flex hidden justify-center py-5 bg-sky-950">
+    <div class="w-full lg:flex hidden justify-center py-5 lg:first-line:bg-sky-950">
       <section class="w-[40%] text-slate-200 font-semibold transition-colors text-lg flex justify-between cursor-pointer">
         <router-link class="py-2 px-3 rounded-lg"
           :class="item.status ? 'bg-green-700 text-white' : 'hover:text-green-700'"
