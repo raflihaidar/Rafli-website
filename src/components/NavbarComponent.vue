@@ -10,7 +10,7 @@
       </section>
     </div>
 
-    <div class="lg:hidden flex flex-col items-end gap-1 p-6 cursor-pointer" @click="handleChange()">
+    <div class="lg:hidden flex flex-col items-end gap-1 p-6 cursor-pointer" @click="change = !change">
       <div class="bg-white w-6 h-1 rounded-full transition"
         :class="change ? 'translate-x-0 translate-y-[8px] -rotate-45 transform' : null">
       </div>
@@ -59,11 +59,6 @@ let navigationMenu = reactive([
     status: false
   },
   {
-    name: 'Resume',
-    page: '/resume',
-    status: false
-  },
-  {
     name: 'Contact',
     page: '/contact',
     status: false
@@ -71,24 +66,14 @@ let navigationMenu = reactive([
 ])
 
 const handleClick = (index) => {
+  change.value = false
   navigationMenu.forEach((item) => {
     if (item.status) item.status = false
   })
   navigationMenu[index].status = !navigationMenu[index].status
-  change.value = !change.value
-}
-
-const handleChange = () => {
-  change.value = !change.value
-
-  console.log(change.value)
 }
 
 onMounted(() => {
-  navigationMenu.forEach((item) => {
-    if (item.status) {
-      router.push({ path: item.page })
-    }
-  })
+  navigationMenu.forEach((item) => item.status ? router.push({ path: item.page }) : null)
 })
 </script>

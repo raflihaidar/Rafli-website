@@ -39,6 +39,17 @@ const text = ["I am a Web Developer", "Especially a Full Stack Developer"];
 let arrIndex = 0;
 let description = ref("");
 
+const typedText = () => {
+  if (stringIndex < text[arrIndex].length) {
+    description.value += text[arrIndex].charAt(stringIndex);
+    stringIndex += 1;
+    setTimeout(typedText, 100);
+  } else {
+    typedStatus.value = false;
+    setTimeout(eraseText, 2000);
+  }
+}
+
 const eraseText = () => {
   typedStatus.value = true
   if (typedStatus.value && description.value != "") {
@@ -48,16 +59,6 @@ const eraseText = () => {
   } else {
     arrIndex = (arrIndex + 1) % text.length;
     setTimeout(typedText, 100);
-  }
-}
-const typedText = () => {
-  if (stringIndex < text[arrIndex].length) {
-    description.value += text[arrIndex].charAt(stringIndex);
-    stringIndex += 1;
-    setTimeout(typedText, 100);
-  } else {
-    typedStatus.value = false;
-    setTimeout(eraseText, 2000);
   }
 }
 
