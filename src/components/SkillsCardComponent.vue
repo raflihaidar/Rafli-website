@@ -1,5 +1,5 @@
 <template>
-  <main class="w-full h-full grid grid-cols-4 gap-8">
+  <main class="w-full h-full grid lg:grid-cols-4 grid-cols-1 gap-8">
     <a href="https://www.javascript.com/" target="_blank"
       class="bg-sky-950 flex gap-x-3 items-center hover:bg-blue-900 hover:bg-opacity-50 transition-colors  px-5 py-5 text-center text-slate-200 text-lg font-bold cursor-pointer">
       <img src='../assets/img/js.png' alt="js" class="w-8">

@@ -3,11 +3,11 @@
     <div class="w-[80%] h-full mx-auto my-10">
       <section class="text-slate-200 font-bold tracking-wide">
         <SubTittleComponent name="ABOUT" />
-        <div class="flex text-justify items-center">
-          <span class="w-[20%]">
+        <div class="flex flex-col lg:flex-row text-justify items-center">
+          <span class="lg:w-[20%] w-full">
             <img src="../assets/img/foto_saya.png" alt="my photo" class="w-full h-full">
           </span>
-          <span class="w-[60%] mx-auto grid gap-y-5">
+          <span class="lg:w-[60%] w-full mt-5 text-justify mx-auto grid gap-y-5">
             <p>Junior year student majoring in Technology Information who is interested in Web Development</p>
             <p>I have been working as <span class="text-green-600">Web Developer</span> since 2022. I’ve always been
               someone

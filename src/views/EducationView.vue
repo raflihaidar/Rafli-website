@@ -3,7 +3,7 @@
     <div class="w-[80%] mx-auto my-10">
       <section class="mb-20">
         <SubTittleComponent name="EDUCATION" />
-        <div class="w-[35%] bg-sky-950 hover:bg-blue-950 transition-colors ease-in-out rounded-b-xl">
+        <div class="lg:w-[35%] w-full bg-sky-950 hover:bg-blue-950 transition-colors ease-in-out rounded-b-xl">
           <span>
             <img src="../assets//img/Telkom-University.jpg" alt="Telkom University">
           </span>
@@ -20,7 +20,7 @@
       <section class="py-10">
         <SubTittleComponent name="CERTIFICATIONS" />
         <span class="grid grid-rows-1">
-          <img src="../assets//img/sertifikat.jpg" alt="certification" class="w-[30%]">
+          <img src="../assets//img/sertifikat.jpg" alt="certification" class="lg:w-[30%] w-full">
         </span>
       </section>
     </div>

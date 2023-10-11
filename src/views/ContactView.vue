@@ -2,7 +2,7 @@
   <main class="w-[80%] mx-auto my-10">
     <section>
       <SubTittleComponent name="CONTACTS" />
-      <div class="grid grid-cols-2 gap-x-8 text-green-700">
+      <div class="grid lg:grid-cols-2 gap-8 text-green-700">
         <section class="flex gap-x-5 items-center bg-sky-950 rounded-xl px-4 py-10">
           <span class="bg-slate-600 rounded-full p-4">
             <EmailIcon size="1.3" />
