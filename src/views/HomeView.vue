@@ -14,7 +14,7 @@
         <InstagramIcon />
       </span>
       <span class="w-auto bg-gray-800 hover:bg-green-700 transition-colors cursor-pointer rounded-full p-3">
-        <GithubIcon />
+        <GithubIcon url="https://github.com/raflihaidar" size="1em" />
       </span>
       <span class="w-auto bg-gray-800 hover:bg-green-700 transition-colors cursor-pointer rounded-full p-3">
         <LinkedinIcon />
@@ -35,7 +35,7 @@ import { ref } from 'vue';
 
 let stringIndex = 0;
 let typedStatus = ref(true);
-const text = ["I am a Web Developer", "Especially a Full Stack Developer"];
+const text = ["I am a Web Developer", "Especially a Front end Developer"];
 let arrIndex = 0;
 let description = ref("");
 

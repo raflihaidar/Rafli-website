@@ -20,16 +20,6 @@
       <img src='../assets/img/express.png' alt="express" class="w-8">
       <p>Express</p>
     </a>
-    <a href="https://www.w3schools.com/cpp/" target="_blank"
-      class="bg-sky-950 flex gap-x-3 items-center lg:hover:bg-blue-900 lg:hover:bg-opacity-50 transition-colors  px-5 py-5 text-center text-slate-200 text-lg font-bold cursor-pointer">
-      <img src='../assets/img/c++.png' alt="c++" class="w-8">
-      <p>c++</p>
-    </a>
-    <a href="https://www.java.com/en/" target="_blank"
-      class="bg-sky-950 flex gap-x-3 items-center lg:hover:bg-blue-900 lg:hover:bg-opacity-50 transition-colors  px-5 py-5 text-center text-slate-200 text-lg font-bold cursor-pointer">
-      <img src='../assets/img/java.png' alt="java" class="w-8">
-      <p>Java</p>
-    </a>
     <a href="https://tailwindcss.com/" target="_blank"
       class="bg-sky-950 flex gap-x-3 items-center lg:hover:bg-blue-900 lg:hover:bg-opacity-50 transition-colors  px-5 py-5 text-center text-slate-200 text-lg font-bold cursor-pointer">
       <img src='../assets/img/tailwind.svg' alt="tailwind" class="w-8">

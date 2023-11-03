@@ -27,7 +27,7 @@
                 <LinkedinIcon />
               </span>
               <span class="w-auto bg-gray-800 hover:bg-green-700 transition-colors cursor-pointer rounded-full p-3">
-                <GithubIconVue />
+                <GithubIconVue url="https://github.com/raflihaidar" size="1em" />
               </span>
             </span>
           </span>

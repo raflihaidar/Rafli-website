@@ -4,7 +4,6 @@ import AboutView from '../views/AboutView.vue'
 import EducationView from '../views/EducationView.vue'
 import ExperienceView from '../views/ExperienceView.vue'
 import ProjectView from '../views/ProjectView.vue'
-import ResumeView from '../views/ResumeView.vue'
 import ContactView from '../views/ContactView.vue'
 
 const router = createRouter({
@@ -37,8 +36,7 @@ const router = createRouter({
     },
     {
       path: '/resume',
-      name: 'resume',
-      component: ResumeView
+      name: 'resume'
     },
     {
       path: '/contact',
