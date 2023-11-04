@@ -49,7 +49,7 @@ const openModal = (item) => {
 const projects = reactive([
   {
     name: "Mitra Pasar",
-    img: "src/assets/img/Mitra_Pasar.jpg",
+    img: "./src/assets/img/Mitra_Pasar.jpg",
     description: "Pasar Mitra is an e-commerce platform that is used to advance traditional markets and local MSMEs. Where e-commerce sells products and adapts activities that exist in traditional markets.",
     technologies: [
       "Vue js",
@@ -62,7 +62,7 @@ const projects = reactive([
   },
   {
     name: "Student Service Center",
-    img: "src/assets/img/Web_SSC.jpg",
+    img: "./src/assets/img/Web_SSC.jpg",
     description: "This platform is used as a place for students to get information about the services provided by the Telkom Surabaya IT Student Service Center.",
     technologies: [
       "Vue js",
@@ -72,7 +72,7 @@ const projects = reactive([
   },
   {
     name: "Gmail Clone",
-    img: "src/assets/img/gmail.jpg",
+    img: "./src/assets/img/gmail.jpg",
     description: "Web email that adapts Gmail features such as real-time inbox, logging in with a Google account, and etc.",
     technologies: [
       "Vue js",
