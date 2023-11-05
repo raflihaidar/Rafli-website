@@ -12,14 +12,14 @@
                 <img :src="item.img" alt="mitra pasar" class="w-full">
               </div>
               <span v-if="hoverIndex === index"
-                class="absolute animate-fadeout flex gap-x-3 items-center justify-center bg-black opacity-70 w-full h-full top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] z-10">
-                <InformationIcon @click="openModal(item)" />
+                class="absolute animate-fadeout flex gap-x-3 items-center justify-center bg-black opacity-80 w-full h-full top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] z-10">
+                <InformationIcon @click="openModal(item)" size="1.5em" />
               </span>
             </div>
           </span>
         </div>
         <transition to="projectView">
-          <ModalComponent :status="modalStatus" :data="modalContent" />
+          <ModalComponent :status="modalStatus" :data="modalContent" @close-modal="closeModal" />
         </transition>
       </section>
     </div>
@@ -36,7 +36,7 @@ import MitraPasar from "../assets/img/Mitra_Pasar.jpg"
 import SSC from "../assets/img/Web_SSC.jpg"
 import gmail from "../assets/img/gmail.jpg"
 
-let hoverIndex = ref(0);
+let hoverIndex = ref(null);
 let modalStatus = ref(false);
 let modalContent = ref(null)
 
@@ -47,7 +47,11 @@ const handleHover = (index, isHover) => {
 const openModal = (item) => {
   modalStatus.value = true
   modalContent.value = item
-  console.log(modalContent.value)
+}
+
+const closeModal = () => {
+  modalStatus.value = false
+  console.log(modalStatus.value)
 }
 const projects = reactive([
   {
@@ -61,7 +65,8 @@ const projects = reactive([
       "Pinia",
       "Google auth library",
       "Tailwind css"
-    ]
+    ],
+    url: "https://github.com/raflihaidar/Mitra-Pasar"
   },
   {
     name: "Student Service Center",
@@ -71,7 +76,8 @@ const projects = reactive([
       "Vue js",
       "Vuex",
       "Tailwind css"
-    ]
+    ],
+    url: "https://github.com/raflihaidar/Web-SSC"
   },
   {
     name: "Gmail Clone",
@@ -82,7 +88,8 @@ const projects = reactive([
       "Firebase",
       "Google auth library",
       "Tailwind css"
-    ]
+    ],
+    url: "https://github.com/raflihaidar/gmail-clone"
   },
 ])
 </script>

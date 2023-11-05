@@ -5,7 +5,7 @@
         Nashif</p>
     </section>
     <section class="my-10">
-      <p class="text-2xl text-slate-200 font-bold">Hi, Guys!</p>
+      <p class="text-2xl text-slate-200 font-bold">Hi, Folks!</p>
       <span class="lg:text-2xl text-xl text-green-700 font-bold">{{ description }}</span>
       <span class="w-[3px] ml-[4px] inline-block bg-white" :class="!typedStatus ? 'animate-blink' : ''">&nbsp;</span>
     </section>
@@ -24,6 +24,9 @@
       </span>
     </section>
   </main>
+  <footer class="absolute bottom-2 bg-inherit left-2/4  text-center -translate-x-[50%] -translate-y-[50%]">
+    <FooterComponent />
+  </footer>
 </template>
 
 <script setup>
@@ -31,6 +34,7 @@ import InstagramIcon from "../components/icons/InstagramIcon.vue"
 import GithubIcon from "../components/icons/GithubIcon.vue"
 import LinkedinIcon from "../components/icons/LinkedinIcon.vue"
 import EmailIcon from "../components/icons/EmailIcon.vue"
+import FooterComponent from "../components/FooterComponent.vue"
 import { ref } from 'vue';
 
 let stringIndex = 0;

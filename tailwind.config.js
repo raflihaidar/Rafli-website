@@ -10,12 +10,32 @@ export default {
           '61%, 100%': { background: 'transparent' }
         },
         fadeout: {
-          '0%': { opacity: 0 }
+          '0%': { opacity: 0.5 }
+        },
+        grow: {
+          '0%': {
+            transform: 'scale(0.3)',
+            opacity: 0.5
+          },
+          '100%': {
+            transform: 'scale(1)',
+            opacity: 1
+          }
+        },
+        shrink: {
+          '0%': {
+            transform: 'scale(1)'
+          },
+          '100%': {
+            transform: 'scale(0)'
+          }
         }
       },
       animation: {
         blink: 'blink 1s infinite',
-        fadeout: 'fadeout 0.3s linear'
+        fadeout: 'fadeout 0.3s linear',
+        grow: 'grow 0.4s ease-in-out',
+        shrink: 'shrink 0.4s ease-out'
       }
     }
   },
