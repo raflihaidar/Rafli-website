@@ -25,7 +25,7 @@
             </section>
             <section>
               <p class="font-semibold">Description : </p>
-              <p>{{ data.description }}</p>
+              <p class="text-justify text-sm">{{ data.description }}</p>
             </section>
           </span>
         </section>
