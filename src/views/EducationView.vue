@@ -9,8 +9,7 @@
           </span>
           <div class="w-full text-white px-2 py-3">
             <a href="https://ittelkom-sby.ac.id/" target="_blank"
-              class="text-xl font-semibold hover:underline cursor-pointer transition">Institute Technology Telkom
-              Surabaya</a>
+              class="text-xl font-semibold hover:underline cursor-pointer transition">Telkom University Surabaya</a>
             <p class="text-lg">Sep 2022 - Present</p>
             <p class="text-md italic">Bachelor;s Degree in Information Technology - S.Kom.</p>
           </div>

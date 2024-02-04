@@ -5,11 +5,6 @@
       <img src='../assets/img/js.png' alt="js" class="w-8">
       <p>Javascript</p>
     </a>
-    <a href="https://react.dev/" target="_blank"
-      class="bg-sky-950 flex gap-x-3 items-center lg:hover:bg-blue-900 lg:hover:bg-opacity-50 transition-colors  px-5 py-5 text-center text-slate-200 text-lg font-bold cursor-pointer">
-      <img src='../assets/img/react.png' alt="react" class="w-8">
-      <p>React</p>
-    </a>
     <a href="https://vuejs.org/" target="_blank"
       class="bg-sky-950 flex gap-x-3 items-center lg:hover:bg-blue-900 lg:hover:bg-opacity-50 transition-colors  px-5 py-5 text-center text-slate-200 text-lg font-bold cursor-pointer">
       <img src='../assets/img/vue.svg' alt="vue" class="w-8">
@@ -39,11 +34,6 @@
       class="bg-sky-950 flex gap-x-3 items-center lg:hover:bg-blue-900 lg:hover:bg-opacity-50 transition-colors  px-5 py-5 text-center text-slate-200 text-lg font-bold cursor-pointer">
       <img src='../assets/img/pinia.svg' alt="Pinia" class="w-8">
       <p>Pinia</p>
-    </a>
-    <a href="https://redux.js.org/" target="_blank"
-      class="bg-sky-950 flex gap-x-3 items-center lg:hover:bg-blue-900 lg:hover:bg-opacity-50 transition-colors  px-5 py-5 text-center text-slate-200 text-lg font-bold cursor-pointer">
-      <img src='../assets/img/redux.png' alt="redux" class="w-8">
-      <p>Redux</p>
     </a>
     <a href="https://github.com/" target="_blank"
       class="bg-sky-950 flex gap-x-3 items-center lg:hover:bg-blue-900 lg:hover:bg-opacity-50 transition-colors  px-5 py-5 text-center text-slate-200 text-lg font-bold cursor-pointer">

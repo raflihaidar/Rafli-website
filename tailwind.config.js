@@ -29,13 +29,22 @@ export default {
           '100%': {
             transform: 'scale(0)'
           }
+        },
+        from_left: {
+          '0%': {
+            width: '0px'
+          },
+          '100%': {
+            width: '1.25rem'
+          }
         }
       },
       animation: {
         blink: 'blink 1s infinite',
         fadeout: 'fadeout 0.3s linear',
         grow: 'grow 0.4s ease-in-out',
-        shrink: 'shrink 0.4s ease-out'
+        shrink: 'shrink 0.4s ease-out',
+        fromLeft: ' from_left 0.4s ease-out'
       }
     }
   },

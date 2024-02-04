@@ -1,11 +1,14 @@
 <template>
   <nav class="w-screen">
-    <div class="w-full lg:flex hidden justify-center py-5 bg-sky-950">
+    <div class="w-full lg:flex hidden justify-center py-5">
       <section class="w-[40%] text-slate-200 font-semibold transition-colors text-lg flex justify-between cursor-pointer">
-        <router-link class="py-2 px-3 rounded-lg"
-          :class="item.status ? 'bg-green-700 text-white' : 'hover:text-green-700'"
+        <router-link class="py-2 px-3 rounded-lg group" :class="item.status ? 'text-green-700' : 'hover:text-green-600'"
           v-for="(item, index) in navigationMenu" :key="index" :to="item.page" @click="handleClick(index)">
           {{ item.name }}
+          <span>
+            <hr class="transition-transform border-yellow-500 border-0"
+              :class="item.status ? 'w-5 border-[1.5px]' : 'group-hover:text-green-600 group-hover:w-5 w-0 group-hover:border-[1.5px] group-hover:animate-fromLeft mx-0'">
+          </span>
         </router-link>
       </section>
     </div>
@@ -54,8 +57,13 @@ let navigationMenu = reactive([
     status: false
   },
   {
-    name: 'Project',
+    name: 'Projects',
     page: '/project',
+    status: false
+  },
+  {
+    name: 'Resume',
+    page: '/resume',
     status: false
   },
   {
