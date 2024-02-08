@@ -37,6 +37,14 @@ export default {
           '100%': {
             width: '1.25rem'
           }
+        },
+        onLeave: {
+          '0%': {
+            width: '1.25rem'
+          },
+          '100%': {
+            width: '0'
+          }
         }
       },
       animation: {
@@ -44,7 +52,8 @@ export default {
         fadeout: 'fadeout 0.3s linear',
         grow: 'grow 0.4s ease-in-out',
         shrink: 'shrink 0.4s ease-out',
-        fromLeft: ' from_left 0.4s ease-out'
+        fromLeft: ' from_left 0.4s ease-out',
+        onLeave: ' onLeave 0.4s ease-out'
       }
     }
   },

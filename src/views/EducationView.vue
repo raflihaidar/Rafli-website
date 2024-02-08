@@ -15,7 +15,6 @@
           </div>
         </div>
       </section>
-
       <section class="py-10">
         <SubTittleComponent name="CERTIFICATIONS" />
         <span class="grid grid-rows-1">

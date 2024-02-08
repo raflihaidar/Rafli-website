@@ -3,11 +3,14 @@
     <div class="w-full lg:flex hidden justify-center py-5">
       <section class="w-[40%] text-slate-200 font-semibold transition-colors text-lg flex justify-between cursor-pointer">
         <router-link class="py-2 px-3 rounded-lg group" :class="item.status ? 'text-green-700' : 'hover:text-green-600'"
-          v-for="(item, index) in navigationMenu" :key="index" :to="item.page" @click="handleClick(index)">
+          @mouseleave="onLeave(index)" @mouseenter="onEnter(index)" v-for="(item, index) in navigationMenu" :key="index"
+          :to="item.page" @click="handleClick(index)">
           {{ item.name }}
           <span>
-            <hr class="transition-transform border-yellow-500 border-0"
-              :class="item.status ? 'w-5 border-[1.5px]' : 'group-hover:text-green-600 group-hover:w-5 w-0 group-hover:border-[1.5px] group-hover:animate-fromLeft mx-0'">
+            <transition name="border">
+              <hr class="b-bottom transition-transform border-yellow-500 border-0" v-if="item.status || item.hover"
+                :class="item.status ? 'w-5 border-[1.5px] ' : 'group-hover:text-green-600 group-hover:w-5 w-0 group-hover:border-[1.5px] group-hover:animate-fromLeft mx-0'">
+            </transition>
           </span>
         </router-link>
       </section>
@@ -34,7 +37,6 @@
   </nav>
 </template>
 
-
 <script setup>
 import { onMounted, reactive, ref } from 'vue'
 import { useRouter } from 'vue-router';
@@ -44,34 +46,48 @@ let navigationMenu = reactive([
   {
     name: 'Home',
     page: '/',
-    status: true
+    status: true,
+    hover: false
   },
   {
     name: 'About',
     page: '/about',
-    status: false
+    status: false,
+    hover: false
   },
   {
     name: 'Education',
     page: '/education',
-    status: false
+    status: false,
+    hover: false
   },
   {
     name: 'Projects',
     page: '/project',
-    status: false
+    status: false,
+    hover: false
   },
   {
     name: 'Resume',
     page: '/resume',
-    status: false
+    status: false,
+    hover: false
   },
   {
     name: 'Contact',
     page: '/contact',
-    status: false
+    status: false,
+    hover: false
   }
 ])
+
+const onLeave = (index) => {
+  navigationMenu[index].hover = false
+}
+
+const onEnter = (index) => {
+  navigationMenu[index].hover = true
+}
 
 const handleClick = (index) => {
   change.value = false
@@ -85,3 +101,22 @@ onMounted(() => {
   navigationMenu.forEach((item) => item.status ? router.push({ path: item.page }) : null)
 })
 </script>
+
+<style>
+.border-enter-active,
+.border-leave-active {
+  transition: width 0.5s ease, border-width 0.5s ease;
+}
+
+.border-enter-from,
+.border-leave-to {
+  width: 0;
+  border-width: 0;
+}
+
+.border-enter-to,
+.border-leave-from {
+  width: 1.25rem;
+  border-width: 1.5px;
+}
+</style>
