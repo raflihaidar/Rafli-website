@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-slate-950 w-screen h-screen relative">
+  <div class="bg-slate-950 w-screen h-screen relative selection:bg-green-700">
     <NavbarComponent />
     <router-view></router-view>
     <MessageButton />

@@ -9,7 +9,7 @@
       <span class="lg:text-2xl text-xl text-green-700 font-bold">{{ description }}</span>
       <span class="w-[3px] ml-[4px] inline-block bg-white" :class="!typedStatus ? 'animate-blink' : ''">&nbsp;</span>
     </section>
-    <section class="lg:w-[15%] gap-x-5 flex lg:justify-between justify-center">
+    <section class="lg:w-[15%] gap-x-5 flex lg:justify-between justify-center my-10">
       <span class="w-auto bg-gray-800 hover:bg-green-700 transition-colors cursor-pointer rounded-full p-3">
         <InstagramIcon />
       </span>
@@ -22,6 +22,12 @@
       <span class="w-auto bg-gray-800 hover:bg-green-700 transition-colors cursor-pointer rounded-full p-3">
         <EmailIcon size="1" />
       </span>
+    </section>
+    <section>
+      <button
+        class="bg-blue-600 hover:bg-blue-700 transition-colors py-2 px-4 text-white font-semibold rounded-lg text-sm lg:w-40 w-52">
+        View My Resume
+      </button>
     </section>
   </main>
   <footer class="absolute bottom-2 bg-inherit left-2/4  text-center -translate-x-[50%] -translate-y-[50%]">

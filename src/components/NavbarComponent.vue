@@ -1,7 +1,8 @@
 <template>
   <nav class="w-screen">
     <div class="w-full lg:flex hidden justify-center py-5">
-      <section class="w-[40%] text-slate-200 font-semibold transition-colors text-lg flex justify-between cursor-pointer">
+      <section
+        class="w-[40%] text-slate-200 font-semibold transition-colors text-lg flex justify-between cursor-pointer gap-x-5">
         <router-link class="py-2 px-3 rounded-lg group" :class="item.status ? 'text-green-700' : 'hover:text-green-600'"
           @mouseleave="onLeave(index)" @mouseenter="onEnter(index)" v-for="(item, index) in navigationMenu" :key="index"
           :to="item.page" @click="handleClick(index)">
@@ -26,6 +27,7 @@
       </div>
     </div>
 
+
     <div v-if="change"
       class="lg:hidden absolute flex flex-col items-start pt-5 bg-black opacity-90 z-10 w-[90%] h-[80%] top-[50%] left-[50%] lg:text-left text-center -translate-x-[50%] -translate-y-[50%] border border-white rounded-lg">
       <router-link class="py-2 px-3 text-lg text-white font-semibold"
@@ -37,7 +39,7 @@
   </nav>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { onMounted, reactive, ref } from 'vue'
 import { useRouter } from 'vue-router';
 const router = useRouter()
@@ -62,14 +64,14 @@ let navigationMenu = reactive([
     hover: false
   },
   {
-    name: 'Projects',
-    page: '/project',
+    name: 'Experience',
+    page: '/experience',
     status: false,
     hover: false
   },
   {
-    name: 'Resume',
-    page: '/resume',
+    name: 'Projects',
+    page: '/project',
     status: false,
     hover: false
   },

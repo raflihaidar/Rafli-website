@@ -1,7 +1,8 @@
 <template>
   <main class="md:w-full">
     <transition name="message">
-      <section class="md:w-[25%] h-[60%] bg-white text-center rounded-lg fixed bottom-24 md:right-8 right-4"
+      <section
+        class="lg:w-[25%] lg:h-[60%] bg-white text-center rounded-lg fixed w-full h-screen lg:bottom-24 lg:right-8 bottom-0"
         v-if="showMessage">
         <div
           class="bg-blue-600 w-full text-white text-xs gap-y-1 rounded-t-lg py-3 text-center flex flex-col justify-center items-center">
@@ -27,10 +28,10 @@
       </section>
     </transition>
     <div
-      class="bg-sky-950  rounded-full p-4  text-white fixed bottom-5 md:right-8 right-4 cursor-pointer hover:scale-110 transition-transform"
-      @mouseenter="hover = true" @mouseleave="hover = false">
-      <MessageIcon v-if="!showMessage" @click="showMessage = !showMessage" />
-      <CloseIcon v-else @click="showMessage = !showMessage" />
+      class="bg-blue-600  block rounded-full p-4  text-white fixed bottom-5 md:right-8 right-4 cursor-pointer hover:scale-110 transition-transform"
+      @click="showMessage = !showMessage" @mouseenter="hover = true" @mouseleave="hover = false">
+      <MessageIcon v-if="!showMessage" />
+      <CloseIcon v-else />
     </div>
   </main>
 </template>
@@ -46,11 +47,12 @@ import CloseIcon from "./icons/CloseIcon.vue"
 <style>
 .message-enter-active,
 .message-leave-active {
-  transition: opacity 0.5s ease
+  transition: opacity 1s ease, transform 0.5s ease
 }
 
 .message-enter-from,
 .message-leave-to {
+  transform: translateY(100%);
   opacity: 0;
 }
 </style>
