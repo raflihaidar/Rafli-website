@@ -10,8 +10,11 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@vueuse/motion": "^2.0.0",
     "axios": "^1.5.1",
     "js-file-download": "^0.4.12",
+    "pinia": "^2.1.7",
+    "pinia-plugin-persistedstate": "^3.2.1",
     "vue": "^3.3.4",
     "vue-pdf": "^4.3.0",
     "vue-router": "^4.2.4",

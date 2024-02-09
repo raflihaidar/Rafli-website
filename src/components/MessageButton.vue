@@ -1,7 +1,8 @@
 <template>
   <main class="md:w-full">
     <transition name="message">
-      <section class="md:w-[25%] h-[60%] bg-white text-center rounded-lg fixed bottom-24 md:right-8 right-4"
+      <section
+        class="lg:w-[25%] lg:h-[60%] bg-white text-center rounded-lg fixed w-full h-screen lg:bottom-24 lg:right-8 top-0"
         v-if="showMessage">
         <div
           class="bg-blue-600 w-full text-white text-xs gap-y-1 rounded-t-lg py-3 text-center flex flex-col justify-center items-center">
@@ -46,11 +47,12 @@ import CloseIcon from "./icons/CloseIcon.vue"
 <style>
 .message-enter-active,
 .message-leave-active {
-  transition: opacity 0.5s ease
+  transition: opacity 1s ease, transform 0.5s ease
 }
 
 .message-enter-from,
 .message-leave-to {
+  transform: translateY(100%);
   opacity: 0;
 }
 </style>
