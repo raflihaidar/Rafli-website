@@ -36,7 +36,7 @@
 </template>
 
 <script setup lang="ts">
-import { useSkillStore } from '../store/skill.ts'
+import { useSkillStore } from '../store/skill.js'
 import SubTittleComponent from '../components/SubTittleComponent.vue';
 import SkillsCardComponent from '../components/SkillsCardComponent.vue';
 import { storeToRefs } from 'pinia';
