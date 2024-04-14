@@ -25,22 +25,22 @@
       <section class="py-10">
         <SubTittleComponent name="CERTIFICATIONS" />
         <div
-          class="grid lg:grid-cols-3 pb-5 grid-cols-1 gap-8 text-slate-200 font-semibold text-xl text-center"
+          class="w-full grid lg:grid-cols-3 pb-5 grid-cols-1 gap-8 text-slate-200 font-semibold text-xl text-center"
         >
           <span v-for="(item, index) in certificate" :key="index">
             <div
-              class="relative border-4 mt-3 border-slate-200 cursor-pointer"
+              class="relative border-4 mt-3 border-slate-200 cursor-pointer w-full"
               @mouseover="item.isHover = true"
               @mouseleave="item.isHover = false"
             >
               <div>
-                <img :src="item.img" :alt="item.name" class="w-full" />
+                <img :src="item.img" :alt="item.name" class="w-full h-56" />
               </div>
               <span
                 v-if="item.isHover"
                 class="absolute animate-fadeout flex gap-x-3 items-center justify-center bg-black opacity-80 w-full h-full top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] z-10"
               >
-                <ZoomIcon @click="openModal(item)" size="1.5em" />
+                <ZoomIcon @click="openModal(item.id)" size="1.5em" />
                 <a :href="item.url" target="_blank">
                   <LinkIcon />
                 </a>
@@ -53,43 +53,10 @@
           <ModalComponent
             name="certificate"
             :status="modalStatus"
-            :data="modalContent"
-            @close-modal="closeModal"
-          />
-        </transition>
-      </section>
-      <section class="py-10">
-        <SubTittleComponent name="ACHIVEMENT" />
-        <div
-          class="grid lg:grid-cols-3 pb-5 grid-cols-1 gap-8 text-slate-200 font-semibold text-xl text-center"
-        >
-          <span v-for="(item, index) in achivement" :key="index">
-            <div
-              class="relative border-4 mt-3 border-slate-200 cursor-pointer"
-              @mouseover="item.isHover = true"
-              @mouseleave="item.isHover = false"
-            >
-              <div>
-                <img :src="item.img" :alt="item.name" class="w-full" />
-              </div>
-              <span
-                v-if="item.isHover"
-                class="absolute animate-fadeout flex gap-x-3 items-center justify-center bg-black opacity-80 w-full h-full top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] z-10"
-              >
-                <ZoomIcon @click="openModal(item)" size="1.5em" />
-                <a :href="item.url" target="_blank">
-                  <LinkIcon />
-                </a>
-                <CopyIcon @click="copyToClipBoard(item.url)" />
-              </span>
-            </div>
-          </span>
-        </div>
-        <transition to="projectView">
-          <ModalComponent
-            name="certificate"
-            :status="modalStatus"
-            :data="modalContent"
+            :data="certificate"
+            :currentIndex="currentIndex"
+            @nextSlide="currentIndex++"
+            @prevSlide="currentIndex--"
             @close-modal="closeModal"
           />
         </transition>
@@ -112,16 +79,15 @@ import JavascriptCertif from '../assets//img/js-certification.jpg'
 import InnovillageCertification from '../assets/img/sertifikat-Innovillage.jpg'
 
 let modalStatus = ref(false)
-let modalContent = ref(null)
+let currentIndex = ref(0)
 
-const openModal = (item) => {
+const openModal = (id) => {
   modalStatus.value = true
-  modalContent.value = item
+  currentIndex.value = id
 }
 
 const closeModal = () => {
   modalStatus.value = false
-  console.log(modalStatus.value)
 }
 
 const copyToClipBoard = async (url) => {
@@ -150,12 +116,9 @@ const certificate = ref([
     img: JavascriptCertif,
     url: 'https://www.freecodecamp.org/certification/fccf9986e11-1a49-43b3-98b9-c16b4dec8773/javascript-algorithms-and-data-structures',
     isHover: false
-  }
-])
-
-const achivement = ref([
+  },
   {
-    id: 1,
+    id: 3,
     name: 'Innovillage 2023',
     img: InnovillageCertification,
     url: '',

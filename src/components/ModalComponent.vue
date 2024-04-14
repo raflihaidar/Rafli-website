@@ -8,11 +8,15 @@
         class="text-white bg-sky-950 p-10 transition w-[80%] h-[80%] overflow-scroll md:overflow-auto m-auto relative rounded-xl"
       >
         <section>
-          <p class="text-3xl font-bold mt-10">{{ data.name }}</p>
+          <p class="text-3xl font-bold mt-10">{{ data[currentIndex - 1].name }}</p>
         </section>
         <section class="md:flex justify-between items-center mt-3">
           <span class="w-[55%]">
-            <img :src="data.img" :alt="data.name" class="w-full mb-2" />
+            <img
+              :src="data[currentIndex - 1].img"
+              :alt="data[currentIndex - 1].name"
+              class="w-full mb-2"
+            />
           </span>
           <span class="w-[40%]">
             <p class="text-xl font-bold mb-2">Project Information</p>
@@ -20,15 +24,15 @@
               <ul class="font-semibold">
                 <li>
                   Category :
-                  <span class="font-thin my-3">{{ data.category }}</span>
+                  <span class="font-thin my-3">{{ data[currentIndex - 1].category }}</span>
                 </li>
                 <li class="my-3">
                   Project Date :
-                  <span class="font-thin my-3">{{ data.project_date }}</span>
+                  <span class="font-thin my-3">{{ data[currentIndex - 1].project_date }}</span>
                 </li>
                 <li class="flex gap-x-2 items-center my-3">
                   Find More on :
-                  <GithubIcon :url="data.url" size="1.2em" />
+                  <GithubIcon :url="data[currentIndex - 1].url" size="1.2em" />
                 </li>
                 <li class="my-3">
                   Technologies :
@@ -36,7 +40,7 @@
                     class="grid lg:grid-cols-3 grid-cols-1 gap-y-3 text-center items-center text-xs mt-2 w-full"
                   >
                     <p
-                      v-for="(item, index) in data.technologies"
+                      v-for="(item, index) in data[currentIndex - 1].technologies"
                       :key="index"
                       class="bg-sky-900 px-2 py-1 rounded-full w-28"
                     >
@@ -47,7 +51,7 @@
                 <li class="my-3">
                   Description :
                   <span class="text-justify text-sm font-normal">
-                    {{ data.description }}
+                    {{ data[currentIndex - 1].description }}
                   </span>
                 </li>
               </ul>
@@ -58,7 +62,7 @@
     </transition>
     <transition v-else name="modal" appear>
       <div class="w-[60%]">
-        <img :src="data.img" alt="certificate" class="w-full" />
+        <img :src="data[currentIndex - 1].img" :alt="data[currentIndex - 1].name" class="w-full" />
       </div>
     </transition>
     <div
@@ -73,12 +77,15 @@
         class="bg-white w-6 h-1 rounded-full translate-x-0 -translate-y-[8px] rotate-45 transform"
       ></div>
     </div>
-    <div v-if="data.id != 1">
+    <div v-if="currentIndex != 1">
       <RightArrowIcon
+        @click="prevSlide"
         class="absolute top-1/2 md:left-20 left-3 cursor-pointer hover:scale-110 transition-transform"
       />
     </div>
     <div
+      v-if="currentIndex < data.length"
+      @click="nextSlide"
       class="absolute top-1/2 md:right-20 right-3 cursor-pointer hover:scale-110 transition-transform"
     >
       <LeftArrowIcon />
@@ -87,12 +94,10 @@
 </template>
 
 <script setup>
-import { inject, provide, toRefs } from 'vue'
+import { toRefs } from 'vue'
 import GithubIcon from './icons/GithubIcon.vue'
 import LeftArrowIcon from './icons/LeftArrowIcon.vue'
 import RightArrowIcon from './icons/RightArrowIcon.vue'
-
-const project = inject('projects')
 
 const props = defineProps({
   name: {
@@ -100,13 +105,15 @@ const props = defineProps({
     default: 'project'
   },
   status: Boolean,
-  data: Object
+  data: Array,
+  currentIndex: Number
 })
+const { status, data, currentIndex } = toRefs(props)
 
-const emit = defineEmits(['closeModal'])
+const emit = defineEmits(['closeModal', 'prevSlide', 'nextSlide'])
 const closeModal = () => emit('closeModal')
-
-const { status, data } = toRefs(props)
+const prevSlide = () => emit('prevSlide')
+const nextSlide = () => emit('nextSlide')
 </script>
 
 <style>

@@ -14,19 +14,26 @@
               @mouseleave="handleHover(index, false)"
             >
               <div>
-                <img :src="item.img" alt="mitra pasar" class="w-full" />
+                <img :src="item.img" alt="mitra pasar" class="w-full h-40" />
               </div>
               <span
                 v-if="hoverIndex === index"
                 class="absolute animate-fadeout flex gap-x-3 items-center justify-center bg-black opacity-80 w-full h-full top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] z-10"
               >
-                <InformationIcon @click="openModal(item)" size="1.5em" />
+                <InformationIcon @click="openModal(item.id)" size="1.5em" />
               </span>
             </div>
           </span>
         </div>
         <transition to="projectView">
-          <ModalComponent :status="modalStatus" :data="modalContent" @close-modal="closeModal" />
+          <ModalComponent
+            :status="modalStatus"
+            :data="projects"
+            :currentIndex="currentIndex"
+            @nextSlide="currentIndex++"
+            @prevSlide="currentIndex--"
+            @close-modal="closeModal"
+          />
         </transition>
       </section>
     </div>
@@ -34,8 +41,7 @@
 </template>
 
 <script setup>
-import { reactive, ref } from 'vue'
-import { provide } from 'vue'
+import { ref } from 'vue'
 import subTitleComponent from '../components/SubTittleComponent.vue'
 import InformationIcon from '../components/icons/InformationIcon.vue'
 import ModalComponent from '../components/ModalComponent.vue'
@@ -46,7 +52,7 @@ import ExpenseTracker from '../assets/img/Expense_Tracker.png'
 import SSC from '../assets/img/Web_SSC.jpg'
 import gmail from '../assets/img/gmail.jpg'
 
-const projects = reactive([
+const projects = ref([
   {
     id: 1,
     name: 'Mitra Pasar',
@@ -115,23 +121,20 @@ const projects = reactive([
   }
 ])
 
-provide('projects', projects)
-
 let hoverIndex = ref(null)
 let modalStatus = ref(false)
-let modalContent = ref(null)
+let currentIndex = ref(0)
 
 const handleHover = (index, isHover) => {
   hoverIndex.value = isHover ? index : null
 }
 
-const openModal = (item) => {
+const openModal = (id) => {
   modalStatus.value = true
-  modalContent.value = item
+  currentIndex.value = id
 }
 
 const closeModal = () => {
   modalStatus.value = false
-  console.log(modalStatus.value)
 }
 </script>
