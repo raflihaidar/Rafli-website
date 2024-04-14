@@ -35,6 +35,7 @@
 
 <script setup>
 import { reactive, ref } from 'vue'
+import { provide } from 'vue'
 import subTitleComponent from '../components/SubTittleComponent.vue'
 import InformationIcon from '../components/icons/InformationIcon.vue'
 import ModalComponent from '../components/ModalComponent.vue'
@@ -44,6 +45,77 @@ import MitraPasar from '../assets/img/Mitra_Pasar.jpg'
 import ExpenseTracker from '../assets/img/Expense_Tracker.png'
 import SSC from '../assets/img/Web_SSC.jpg'
 import gmail from '../assets/img/gmail.jpg'
+
+const projects = reactive([
+  {
+    id: 1,
+    name: 'Mitra Pasar',
+    category: 'Website',
+    project_date: 'April 2023 - October 2023',
+    img: MitraPasar,
+    description:
+      'Pasar Mitra is an e-commerce platform that is used to advance traditional markets and local MSMEs. Where e-commerce sells products and adapts activities that exist in traditional markets.',
+    technologies: ['Vue js', 'Express js', 'Mysql', 'Pinia', 'Google auth library', 'Tailwind css'],
+    url: 'https://github.com/raflihaidar/Mitra-Pasar'
+  },
+  {
+    id: 2,
+    name: 'Student Service Center',
+    category: 'Website',
+    project_date: 'April 2023',
+    img: SSC,
+    description:
+      'This platform is used as a place for students to get information about the services provided by the Telkom Surabaya IT Student Service Center.',
+    technologies: ['Vue js', 'Vuex', 'Tailwind css'],
+    url: 'https://github.com/raflihaidar/Web-SSC'
+  },
+  {
+    id: 3,
+    name: 'Gmail Clone',
+    category: 'Website',
+    project_date: 'September 2023',
+    img: gmail,
+    description:
+      'Web email that adapts Gmail features such as real-time inbox, logging in with a Google account, and etc.',
+    technologies: ['Vue js', 'Firebase', 'Google auth library', 'Tailwind css'],
+    url: 'https://github.com/raflihaidar/gmail-clone'
+  },
+  {
+    id: 4,
+    name: 'SIMAG',
+    category: 'Desktop',
+    project_date: 'November 2023 - December 2023',
+    img: Simag,
+    description:
+      'SIMAG is a desktop application designed to help manage and optimize the operations of a warehouse. By using this application, users can easily track and manage the inventory of goods in the warehouse.',
+    technologies: ['Java', 'SQLite', 'GUI'],
+    url: 'https://github.com/raflihaidar/Aplikasi-Pergudangan'
+  },
+  {
+    id: 5,
+    name: 'Super Hotel',
+    category: 'Website',
+    project_date: 'December 2023 - January 2023',
+    img: Super_hotel,
+    description:
+      'Web email that adapts Gmail features such as real-time inbox, logging in with a Google account, and etc.',
+    technologies: ['Vue js', 'Pinia', 'Laravel', 'Flowbite', 'Mysql', 'Tailwind CSS'],
+    url: 'https://github.com/raflihaidar/Super-Hotel'
+  },
+  {
+    id: 6,
+    name: 'SpendSmart',
+    category: 'Website',
+    project_date: 'February 2024 - present',
+    img: ExpenseTracker,
+    description:
+      "a website as a tool used to record and track one's financial expenses and one's financial income and expenses.",
+    technologies: ['Vue', 'Typescript', 'Express', 'Prisma ORM', 'Mysql'],
+    url: 'https://github.com/raflihaidar/expense-tracker-app'
+  }
+])
+
+provide('projects', projects)
 
 let hoverIndex = ref(null)
 let modalStatus = ref(false)
@@ -62,67 +134,4 @@ const closeModal = () => {
   modalStatus.value = false
   console.log(modalStatus.value)
 }
-
-const projects = reactive([
-  {
-    name: 'Mitra Pasar',
-    category: 'Website',
-    project_date: 'April 2023 - October 2023',
-    img: MitraPasar,
-    description:
-      'Pasar Mitra is an e-commerce platform that is used to advance traditional markets and local MSMEs. Where e-commerce sells products and adapts activities that exist in traditional markets.',
-    technologies: ['Vue js', 'Express js', 'Mysql', 'Pinia', 'Google auth library', 'Tailwind css'],
-    url: 'https://github.com/raflihaidar/Mitra-Pasar'
-  },
-  {
-    name: 'Student Service Center',
-    category: 'Website',
-    project_date: 'April 2023',
-    img: SSC,
-    description:
-      'This platform is used as a place for students to get information about the services provided by the Telkom Surabaya IT Student Service Center.',
-    technologies: ['Vue js', 'Vuex', 'Tailwind css'],
-    url: 'https://github.com/raflihaidar/Web-SSC'
-  },
-  {
-    name: 'Gmail Clone',
-    category: 'Website',
-    project_date: 'September 2023',
-    img: gmail,
-    description:
-      'Web email that adapts Gmail features such as real-time inbox, logging in with a Google account, and etc.',
-    technologies: ['Vue js', 'Firebase', 'Google auth library', 'Tailwind css'],
-    url: 'https://github.com/raflihaidar/gmail-clone'
-  },
-  {
-    name: 'SIMAG',
-    category: 'Desktop',
-    project_date: 'November 2023 - December 2023',
-    img: Simag,
-    description:
-      'SIMAG is a desktop application designed to help manage and optimize the operations of a warehouse. By using this application, users can easily track and manage the inventory of goods in the warehouse.',
-    technologies: ['Java', 'SQLite', 'GUI'],
-    url: 'https://github.com/raflihaidar/Aplikasi-Pergudangan'
-  },
-  {
-    name: 'Super Hotel',
-    category: 'Website',
-    project_date: 'December 2023 - January 2023',
-    img: Super_hotel,
-    description:
-      'Web email that adapts Gmail features such as real-time inbox, logging in with a Google account, and etc.',
-    technologies: ['Vue js', 'Pinia', 'Laravel', 'Flowbite', 'Mysql', 'Tailwind CSS'],
-    url: 'https://github.com/raflihaidar/Super-Hotel'
-  },
-  {
-    name: 'SpendSmart',
-    category: 'Website',
-    project_date: 'February 2024 - present',
-    img: ExpenseTracker,
-    description:
-      "a website as a tool used to record and track one's financial expenses and one's financial income and expenses.",
-    technologies: ['Vue', 'Typescript', 'Express', 'Prisma ORM', 'Mysql'],
-    url: 'https://github.com/raflihaidar/expense-tracker-app'
-  }
-])
 </script>

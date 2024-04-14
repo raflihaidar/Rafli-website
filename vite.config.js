@@ -7,7 +7,14 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [viteCompression(), vue(), vueJsx()],
+  plugins: [
+    viteCompression({
+      algorithm: 'gzip'
+    }),
+    ,
+    vue(),
+    vueJsx()
+  ],
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))

@@ -30,14 +30,14 @@
           <span v-for="(item, index) in certificate" :key="index">
             <div
               class="relative border-4 mt-3 border-slate-200 cursor-pointer"
-              @mouseover="handleHover(index, true)"
-              @mouseleave="handleHover(index, false)"
+              @mouseover="item.isHover = true"
+              @mouseleave="item.isHover = false"
             >
               <div>
-                <img :src="item.img" alt="mitra pasar" class="w-full" />
+                <img :src="item.img" :alt="item.name" class="w-full" />
               </div>
               <span
-                v-if="hoverIndex === index"
+                v-if="item.isHover"
                 class="absolute animate-fadeout flex gap-x-3 items-center justify-center bg-black opacity-80 w-full h-full top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] z-10"
               >
                 <ZoomIcon @click="openModal(item)" size="1.5em" />
@@ -66,14 +66,14 @@
           <span v-for="(item, index) in achivement" :key="index">
             <div
               class="relative border-4 mt-3 border-slate-200 cursor-pointer"
-              @mouseover="handleHover(index, true)"
-              @mouseleave="handleHover(index, false)"
+              @mouseover="item.isHover = true"
+              @mouseleave="item.isHover = false"
             >
               <div>
                 <img :src="item.img" :alt="item.name" class="w-full" />
               </div>
               <span
-                v-if="hoverIndex === index"
+                v-if="item.isHover"
                 class="absolute animate-fadeout flex gap-x-3 items-center justify-center bg-black opacity-80 w-full h-full top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] z-10"
               >
                 <ZoomIcon @click="openModal(item)" size="1.5em" />
@@ -99,23 +99,20 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import SubTittleComponent from '../components/SubTittleComponent.vue'
+import { defineAsyncComponent, ref } from 'vue'
+const SubTittleComponent = defineAsyncComponent(() =>
+  import('../components/SubTittleComponent.vue')
+)
+const ModalComponent = defineAsyncComponent(() => import('../components/ModalComponent.vue'))
+const ZoomIcon = defineAsyncComponent(() => import('../components/icons/ZoomIcon.vue'))
+const LinkIcon = defineAsyncComponent(() => import('../components/icons/LinkIcon.vue'))
+const CopyIcon = defineAsyncComponent(() => import('../components/icons/CopyIcon.vue'))
 import InosoftCertificate from '../assets//img/sertifikat-inosoft.jpg'
 import JavascriptCertif from '../assets//img/js-certification.jpg'
 import InnovillageCertification from '../assets/img/sertifikat-Innovillage.jpg'
-import ModalComponent from '../components/ModalComponent.vue'
-import ZoomIcon from '../components/icons/ZoomIcon.vue'
-import LinkIcon from '../components/icons/LinkIcon.vue'
-import CopyIcon from '../components/icons/CopyIcon.vue'
 
-let hoverIndex = ref(null)
 let modalStatus = ref(false)
 let modalContent = ref(null)
-
-const handleHover = (index, isHover) => {
-  hoverIndex.value = isHover ? index : null
-}
 
 const openModal = (item) => {
   modalStatus.value = true
@@ -138,27 +135,31 @@ const copyToClipBoard = async (url) => {
     console.log(error)
   }
 }
-const certificate = [
+
+const certificate = ref([
   {
     id: 1,
     name: 'Inosoft Bootcamp',
     img: InosoftCertificate,
-    url: ''
+    url: '',
+    isHover: false
   },
   {
     id: 2,
     name: 'Javascript FreeCodeCamp',
     img: JavascriptCertif,
-    url: 'https://www.freecodecamp.org/certification/fccf9986e11-1a49-43b3-98b9-c16b4dec8773/javascript-algorithms-and-data-structures'
+    url: 'https://www.freecodecamp.org/certification/fccf9986e11-1a49-43b3-98b9-c16b4dec8773/javascript-algorithms-and-data-structures',
+    isHover: false
   }
-]
+])
 
-const achivement = [
+const achivement = ref([
   {
     id: 1,
     name: 'Innovillage 2023',
     img: InnovillageCertification,
-    url: ''
+    url: '',
+    isHover: false
   }
-]
+])
 </script>
