@@ -56,12 +56,12 @@
 </template>
 
 <script setup>
-import InstagramIcon from '../components/icons/InstagramIcon.vue'
-import GithubIcon from '../components/icons/GithubIcon.vue'
-import LinkedinIcon from '../components/icons/LinkedinIcon.vue'
-import EmailIcon from '../components/icons/EmailIcon.vue'
-import FooterComponent from '../components/FooterComponent.vue'
-import { ref } from 'vue'
+import { defineAsyncComponent, ref } from 'vue'
+const InstagramIcon = defineAsyncComponent(() => import('../components/icons/InstagramIcon.vue'))
+const GithubIcon = defineAsyncComponent(() => import('../components/icons/GithubIcon.vue'))
+const LinkedinIcon = defineAsyncComponent(() => import('../components/icons/LinkedinIcon.vue'))
+const EmailIcon = defineAsyncComponent(() => import('../components/icons/EmailIcon.vue'))
+const FooterComponent = defineAsyncComponent(() => import('../components/FooterComponent.vue'))
 
 let stringIndex = 0
 let typedStatus = ref(true)

@@ -92,5 +92,8 @@
 </template>
 
 <script setup>
-import SubTittleComponent from '../components/SubTittleComponent.vue'
+import { defineAsyncComponent } from 'vue'
+const SubTittleComponent = defineAsyncComponent(() =>
+  import('../components/SubTittleComponent.vue')
+)
 </script>
