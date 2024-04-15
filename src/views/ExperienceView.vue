@@ -1,7 +1,7 @@
 <template>
-  <main class="bg-slate-950 w-full py-10">
-    <div class="w-[80%] mx-auto my-10">
-      <section class="text-white my-10">
+  <main class="bg-slate-950 w-full">
+    <div class="w-[80%] mx-auto py-20">
+      <section class="text-white my-10" v-motion-slide-left>
         <SubTittleComponent name="Work" />
         <div
           class="lg:w-full mx-auto w-full bg-sky-950 hover:bg-blue-950 transition-colors ease-in-out rounded-xl p-10"
@@ -29,6 +29,7 @@
       <section class="text-white my-10">
         <SubTittleComponent name="Activity" />
         <div
+          v-motion-slide-visible-right
           class="lg:w-full mx-auto w-full bg-sky-950 hover:bg-blue-950 transition-colors ease-in-out rounded-xl p-10"
         >
           <h1 class="text-2xl font-bold">Participant</h1>
@@ -54,7 +55,7 @@
           </ul>
         </div>
       </section>
-      <section class="text-white">
+      <section class="text-white" v-motion-slide-visible-left>
         <SubTittleComponent name="Organizations" />
         <div
           class="lg:w-full mx-auto my-5 w-full bg-sky-950 hover:bg-blue-950 transition-colors ease-in-out rounded-xl p-10"

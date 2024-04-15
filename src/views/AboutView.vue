@@ -1,13 +1,16 @@
 <template>
   <main class="bg-slate-950">
-    <div class="w-[80%] h-full mx-auto my-10">
-      <section class="text-slate-200 font-bold tracking-wide">
+    <div class="w-[80%] h-full mx-auto py-20">
+      <section class="text-slate-200 font-bold tracking-wide my-10">
         <SubTittleComponent name="ABOUT" />
         <div class="flex flex-col lg:flex-row text-justify items-center">
-          <span class="lg:w-[20%] w-full">
+          <span class="lg:w-[20%] h-full w-full" v-motion-slide-left>
             <img src="../assets/img/foto_saya.png" alt="my photo" class="w-full h-full" />
           </span>
-          <span class="lg:w-[60%] w-full mt-5 text-justify mx-auto grid gap-y-5">
+          <span
+            class="lg:w-[60%] h-full w-full mt-5 text-justify mx-auto grid gap-y-5"
+            v-motion-slide-right
+          >
             <p>
               Junior year student majoring in Technology Information who is interested in Web
               Development
@@ -30,7 +33,7 @@
         </div>
       </section>
 
-      <section class="my-10 py-10 w-full">
+      <section class="my-12 py-10 w-full">
         <SubTittleComponent name="SKILLS & TOOLS" />
         <SkillsCardComponent />
       </section>
@@ -38,23 +41,13 @@
   </main>
 </template>
 
-<script setup lang="ts">
-import { useSkillStore } from '../store/skill.js'
-const SubTittleComponent = defineAsyncComponent(
-  () => import('../components/SubTittleComponent.vue')
+<script setup>
+import { defineAsyncComponent } from 'vue'
+const SubTittleComponent = defineAsyncComponent(() =>
+  import('../components/SubTittleComponent.vue')
 )
 
-const SkillsCardComponent = defineAsyncComponent(
-  () => import('../components/SkillsCardComponent.vue')
+const SkillsCardComponent = defineAsyncComponent(() =>
+  import('../components/SkillsCardComponent.vue')
 )
-
-import { storeToRefs } from 'pinia'
-import { defineAsyncComponent, onMounted } from 'vue'
-
-const store = useSkillStore()
-const { skill } = storeToRefs(store)
-
-onMounted(() => {
-  console.log(skill.value)
-})
 </script>

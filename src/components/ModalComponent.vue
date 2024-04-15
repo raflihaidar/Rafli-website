@@ -5,6 +5,7 @@
   >
     <transition appear name="modal" v-if="props.name === 'project'">
       <div
+        ref="target"
         class="text-white bg-sky-950 p-10 transition w-[80%] h-[80%] overflow-scroll md:overflow-auto m-auto relative rounded-xl"
       >
         <section>
@@ -112,7 +113,9 @@ const { status, data, currentIndex } = toRefs(props)
 
 const emit = defineEmits(['closeModal', 'prevSlide', 'nextSlide'])
 const closeModal = () => emit('closeModal')
-const prevSlide = () => emit('prevSlide')
+const prevSlide = () => {
+  emit('prevSlide')
+}
 const nextSlide = () => emit('nextSlide')
 </script>
 

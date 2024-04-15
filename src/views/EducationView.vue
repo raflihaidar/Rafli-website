@@ -1,9 +1,10 @@
 <template>
   <main class="bg-slate-950 w-full" id="projectView">
-    <div class="w-[80%] mx-auto my-10">
-      <section class="mb-20">
+    <div class="w-[80%] mx-auto py-20">
+      <section class="my-20">
         <SubTittleComponent name="EDUCATION" />
         <div
+          v-motion-pop
           class="lg:w-[35%] w-full bg-sky-950 hover:bg-blue-950 transition-colors ease-in-out rounded-b-xl"
         >
           <span>
@@ -23,12 +24,13 @@
       </section>
 
       <section class="py-10">
-        <SubTittleComponent name="CERTIFICATIONS" />
+        <SubTittleComponent name="CERTIFICATIONS & AWARDS" />
         <div
           class="w-full grid lg:grid-cols-3 pb-5 grid-cols-1 gap-8 text-slate-200 font-semibold text-xl text-center"
         >
           <span v-for="(item, index) in certificate" :key="index">
             <div
+              v-motion-pop-visible
               class="relative border-4 mt-3 border-slate-200 cursor-pointer w-full"
               @mouseover="item.isHover = true"
               @mouseleave="item.isHover = false"
@@ -41,7 +43,7 @@
                 class="absolute animate-fadeout flex gap-x-3 items-center justify-center bg-black opacity-80 w-full h-full top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] z-10"
               >
                 <ZoomIcon @click="openModal(item.id)" size="1.5em" />
-                <a :href="item.url" target="_blank">
+                <a :href="item.url" target="_blank" v-show="item.url">
                   <LinkIcon />
                 </a>
                 <CopyIcon @click="copyToClipBoard(item.url)" />
