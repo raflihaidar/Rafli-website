@@ -36,6 +36,7 @@
     </div>
 
     <div
+      :class="{ 'bg-blue-950 transition': isScrolling }"
       class="lg:hidden flex flex-col items-end gap-1 p-6 cursor-pointer"
       @click="change = !change"
     >
@@ -55,7 +56,7 @@
 
     <div
       v-if="change"
-      class="lg:hidden absolute flex flex-col items-start pt-5 bg-black opacity-90 z-10 w-[90%] h-[80%] top-[50%] left-[50%] lg:text-left text-center -translate-x-[50%] -translate-y-[50%] border border-white rounded-lg"
+      class="lg:hidden fixed flex flex-col items-start pt-5 bg-black opacity-90 z-10 w-[90%] h-[80%] top-[50%] left-[50%] lg:text-left text-center -translate-x-[50%] -translate-y-[50%] border border-white rounded-lg"
     >
       <router-link
         class="py-2 px-3 text-lg text-white font-semibold"
