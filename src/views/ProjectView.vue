@@ -1,12 +1,12 @@
 <template>
   <main class="w-full bg-slate-950" id="projectView">
-    <div class="w-[80%] mx-auto my-10">
-      <section>
+    <div class="w-[80%] mx-auto py-20">
+      <section class="my-10">
         <subTitleComponent name="PROJECTS" />
         <div
           class="grid lg:grid-cols-3 pb-5 grid-cols-1 gap-8 text-slate-200 font-semibold text-xl text-center"
         >
-          <span v-for="(item, index) in projects" :key="index">
+          <span v-for="(item, index) in projects" :key="index" v-motion-fade>
             <p>{{ item.name }}</p>
             <div
               class="relative border-4 mt-3 border-slate-200 cursor-pointer"

@@ -1,8 +1,8 @@
 <template>
-  <main class="lg:w-[80%] w-[90%] mx-auto my-10">
+  <main class="lg:w-[80%] w-[90%] h-screen mx-auto py-20">
     <section>
       <SubTittleComponent name="CONTACTS" />
-      <div class="grid lg:grid-cols-2 gap-8 text-green-700">
+      <div class="grid lg:grid-cols-2 gap-8 text-green-700" v-motion-fade>
         <section class="flex gap-x-5 items-center bg-sky-950 rounded-xl px-4 py-8">
           <span class="bg-slate-600 rounded-full p-4">
             <EmailIcon size="1.3" />

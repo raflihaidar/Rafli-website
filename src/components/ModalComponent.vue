@@ -5,7 +5,8 @@
   >
     <transition appear name="modal" v-if="props.name === 'project'">
       <div
-        class="text-white bg-sky-950 p-10 transition w-[80%] h-[80%] overflow-scroll md:overflow-auto m-auto relative rounded-xl"
+        ref="target"
+        class="text-white bg-sky-950 p-10 transition w-full h-full lg:w-[80%] lg:h-[80%] overflow-scroll md:overflow-auto m-auto relative rounded-xl"
       >
         <section>
           <p class="text-3xl font-bold mt-10">{{ data[currentIndex - 1].name }}</p>
@@ -42,7 +43,7 @@
                     <p
                       v-for="(item, index) in data[currentIndex - 1].technologies"
                       :key="index"
-                      class="bg-sky-900 px-2 py-1 rounded-full w-28"
+                      class="bg-sky-900 px-2 py-1 rounded-full lg:w-28"
                     >
                       {{ item }}
                     </p>
@@ -61,7 +62,7 @@
       </div>
     </transition>
     <transition v-else name="modal" appear>
-      <div class="w-[60%]">
+      <div class="lg:w-[60%] w-full">
         <img :src="data[currentIndex - 1].img" :alt="data[currentIndex - 1].name" class="w-full" />
       </div>
     </transition>
@@ -112,7 +113,9 @@ const { status, data, currentIndex } = toRefs(props)
 
 const emit = defineEmits(['closeModal', 'prevSlide', 'nextSlide'])
 const closeModal = () => emit('closeModal')
-const prevSlide = () => emit('prevSlide')
+const prevSlide = () => {
+  emit('prevSlide')
+}
 const nextSlide = () => emit('nextSlide')
 </script>
 
