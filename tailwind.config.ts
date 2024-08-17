@@ -3,7 +3,8 @@ export default {
   content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   theme: {
     fontFamily: {
-      display: ['Poppins']
+      display: ['"JetBrains Mono"', 'monospace'],
+      fira: ['"Fira Code"', 'monospace']
     },
     extend: {
       keyframes: {
