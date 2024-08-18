@@ -1,5 +1,7 @@
 <template>
-  <div class="bg-slate-950 w-screen h-screen font-display selection:bg-green-700 scroll-smooth">
+  <div
+    class="bg-slate-950 w-screen h-screen font-display selection:bg-green-700 scroll-smooth overflow-x-hidden"
+  >
     <BaseNavbar />
     <header>
       <HomeView />
