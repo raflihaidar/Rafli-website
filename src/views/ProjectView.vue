@@ -42,9 +42,9 @@
 
 <script setup>
 import { ref } from 'vue'
-import subTitleComponent from '../components/SubTittleComponent.vue'
+import subTitleComponent from '../components/BaseSubTittle.vue'
 import InformationIcon from '../components/icons/InformationIcon.vue'
-import ModalComponent from '../components/ModalComponent.vue'
+import ModalComponent from '../components/BaseModal.vue'
 import Super_hotel from '../assets/img/super_hotel.jpg'
 import Simag from '../assets/img/simag.jpg'
 import MitraPasar from '../assets/img/Mitra_Pasar.jpg'

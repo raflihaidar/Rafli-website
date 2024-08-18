@@ -1,10 +1,10 @@
 <template>
-  <div class="bg-slate-950 w-screen h-screen relative overflow-hidden">
+  <div class="w-screen h-screen relative" id="home">
     <div
-      class="w-40 h-40 z-10 md:w-48 md:h-48 rounded-full border border-opacity-30 border-white absolute -left-3 md:botom-10 -top-8 md:-top-7"
+      class="w-40 h-40 z-10 md:w-48 md:h-48 rounded-full border border-opacity-30 border-white absolute -left-3 md:botom-10 md:-left-10 -top-8 md:-top-10"
     ></div>
     <div
-      class="w-40 h-40 z-10 md:w-48 md:h-48 rounded-full border border-opacity-30 border-white absolute -right-10 md:botom-10 -bottom-20 md:-top-7"
+      class="w-40 h-40 z-10 md:w-48 md:h-48 rounded-full border border-opacity-30 border-white absolute -right-10 md:botom-10 -bottom-20 md:-right-20"
     ></div>
     <main
       class="absolute md:w-[90%] w-[90%] top-1/2 max-sm:top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2"
@@ -51,7 +51,7 @@
       </header>
 
       <section
-        class="lg:w-full max-sm:relative -bottom-40 w-[90%] gap-x-5 flex max-sm:grid grid-cols-2 gap-y-2 lg:justify-center justify-center mt-12"
+        class="lg:w-full max-sm:relative -bottom-32 w-[90%] gap-x-5 flex max-sm:grid grid-cols-2 gap-y-2 lg:justify-center justify-center mt-12"
       >
         <span
           class="w-auto flex items-center gap-x-2 text-white bg-gray-800 hover:bg-green-700 transition-colors cursor-pointer rounded-full p-3"
@@ -127,22 +127,13 @@
         </span>
       </section>
     </main>
-    <footer
-      class="absolute bottom-2 bg-inherit left-2/4 text-center -translate-x-[50%] -translate-y-[50%]"
-    >
-      <FooterComponent />
-    </footer>
   </div>
 </template>
 
 <script setup>
 import { defineAsyncComponent, ref } from 'vue'
 import { Icon } from '@iconify/vue'
-const InstagramIcon = defineAsyncComponent(() => import('../components/icons/InstagramIcon.vue'))
-const SocialIcon = defineAsyncComponent(() => import('../components/icons/SocialIcon.vue'))
-const LinkedinIcon = defineAsyncComponent(() => import('../components/icons/LinkedinIcon.vue'))
-const EmailIcon = defineAsyncComponent(() => import('../components/icons/EmailIcon.vue'))
-const FooterComponent = defineAsyncComponent(() => import('../components/FooterComponent.vue'))
+const SocialIcon = defineAsyncComponent(() => import('../components/BaseSocialIcon.vue'))
 
 let stringIndex = 0
 let typedStatus = ref(true)

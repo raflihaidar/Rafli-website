@@ -3,7 +3,7 @@ export default {
   content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   theme: {
     fontFamily: {
-      display: ['"JetBrains Mono"', 'monospace'],
+      display: ['"VT323", "JetBrains Mono"', 'monospace'],
       fira: ['"Fira Code"', 'monospace']
     },
     extend: {

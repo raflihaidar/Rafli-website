@@ -94,7 +94,5 @@
 
 <script setup>
 import { defineAsyncComponent } from 'vue'
-const SubTittleComponent = defineAsyncComponent(() =>
-  import('../components/SubTittleComponent.vue')
-)
+const SubTittleComponent = defineAsyncComponent(() => import('../components/BaseSubTittle.vue'))
 </script>

@@ -69,10 +69,8 @@
 
 <script setup>
 import { defineAsyncComponent, ref } from 'vue'
-const SubTittleComponent = defineAsyncComponent(() =>
-  import('../components/SubTittleComponent.vue')
-)
-const ModalComponent = defineAsyncComponent(() => import('../components/ModalComponent.vue'))
+const SubTittleComponent = defineAsyncComponent(() => import('../components/BaseSubTittle.vue'))
+const ModalComponent = defineAsyncComponent(() => import('../components/BaseModal.vue'))
 const ZoomIcon = defineAsyncComponent(() => import('../components/icons/ZoomIcon.vue'))
 const LinkIcon = defineAsyncComponent(() => import('../components/icons/LinkIcon.vue'))
 const CopyIcon = defineAsyncComponent(() => import('../components/icons/CopyIcon.vue'))

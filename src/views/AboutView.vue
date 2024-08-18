@@ -1,5 +1,11 @@
 <template>
-  <main class="bg-slate-950">
+  <div class="bg-slate-950 relative scroll-smooth" id="about">
+    <!-- <div
+      class="w-60 h-60 z-0 md:w-[40rem] md:h-[40rem] rounded-full border border-opacity-30 border-white absolute -left-20 md:top-10 -bottom-20 md:-left-30"
+    ></div> -->
+    <div
+      class="w-40 h-40 z-10 md:w-48 md:h-48 rounded-full border border-opacity-30 border-white absolute -right-10 md:botom-10 -bottom-20 md:-right-20"
+    ></div>
     <div class="w-[80%] h-full mx-auto py-20">
       <section class="text-slate-200 font-bold tracking-wide my-10">
         <SubTittleComponent name="ABOUT" />
@@ -12,22 +18,12 @@
             v-motion-slide-right
           >
             <p>
-              Junior year student majoring in Technology Information who is interested in Web
-              Development
-            </p>
-            <p>
-              I have been working as <span class="text-green-600">Web Developer</span> since 2022.
-              I’ve always been someone who has both a
-              <span class="text-green-600">creative and a logical side</span>. When I discovered web
-              design in college, I realized it would be the perfect fit. I could use my creative
-              side to design and my logical side to code. As a bonus, being both designer and
-              developer allows me to make sure no detail is lost in translation.
-            </p>
-            <p>
-              Resourceful professional with successful track record in developing
-              <span class="text-green-600">innovative web designs and features</span>. Possesses
-              solid knowledge of Web Development with ability to quickly learn new technologies.
-              Demonstrated success in identifying and resolving complex code issues.
+              Experienced <span class="text-green-600"> Full-Stack Developer</span> passionate about
+              crafting exceptional user experiences. Proficient in
+              <span class="text-green-600">MySQL, Vue.js, Express.js, and Node.js</span>. Skilled in
+              using development tools such as VS Code and Linux. Successfully
+              <span class="text-green-600">built three web projects</span>, ranging from e-commerce
+              platforms to real-time web applications.
             </p>
           </span>
         </div>
@@ -38,16 +34,14 @@
         <SkillsCardComponent />
       </section>
     </div>
-  </main>
+  </div>
 </template>
 
 <script setup>
 import { defineAsyncComponent } from 'vue'
-const SubTittleComponent = defineAsyncComponent(() =>
-  import('../components/SubTittleComponent.vue')
-)
+const SubTittleComponent = defineAsyncComponent(() => import('../components/BaseSubTittle.vue'))
 
-const SkillsCardComponent = defineAsyncComponent(() =>
-  import('../components/SkillsCardComponent.vue')
+const SkillsCardComponent = defineAsyncComponent(
+  () => import('../components/SkillsCardComponent.vue')
 )
 </script>
