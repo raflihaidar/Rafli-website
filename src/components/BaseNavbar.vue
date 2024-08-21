@@ -114,12 +114,6 @@ const navigationMenu = ref([
     page: '#project',
     status: false,
     hover: false
-  },
-  {
-    name: 'Contact',
-    page: '#contact',
-    status: false,
-    hover: false
   }
 ])
 
