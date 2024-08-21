@@ -1,3 +1,4 @@
+<!-- Template Vue -->
 <template>
   <main class="w-full h-full grid lg:grid-cols-4 grid-cols-1 gap-8">
     <transition :css="false" v-for="(item, index) in skillFiltered" :key="index" name="card-skills">
@@ -17,7 +18,6 @@
 <script setup>
 import { onMounted, ref } from 'vue'
 
-const allSelected = ref(null)
 const skillFiltered = ref(null)
 const skills = [
   {
@@ -32,10 +32,15 @@ const skills = [
     url: 'https://www.javascript.com',
     category: 'language'
   },
-
   {
     name: 'Vue',
     image: 'vue.svg',
+    url: 'https://vuejs.org/',
+    category: 'language'
+  },
+  {
+    name: 'Nuxt',
+    image: 'nuxt.png',
     url: 'https://vuejs.org/',
     category: 'language'
   },
@@ -47,7 +52,7 @@ const skills = [
   },
   {
     name: 'Express',
-    image: 'express.png',
+    image: 'express.svg',
     url: 'https://expressjs.com/',
     category: 'language'
   },
@@ -80,6 +85,18 @@ const skills = [
     image: 'git.png',
     url: 'https://getbootstrap.com/',
     category: 'tools'
+  },
+  {
+    name: 'Prisma',
+    image: 'prisma.png',
+    url: 'https://getbootstrap.com/',
+    category: 'tools'
+  },
+  {
+    name: 'Linux',
+    image: 'linux.png',
+    url: 'https://getbootstrap.com/',
+    category: 'tools'
   }
 ]
 
@@ -107,7 +124,7 @@ onMounted(() => {
 })
 </script>
 
-<style>
+<style scoped>
 .card-skills-leave-active .card-skills-enter-active {
   transition: transform 0.5s ease;
 }

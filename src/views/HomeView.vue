@@ -1,5 +1,5 @@
 <template>
-  <div class="w-screen h-screen relative" id="home">
+  <section class="w-screen h-screen relative" id="home">
     <div
       class="w-40 h-40 z-10 md:w-48 md:h-48 rounded-full border border-opacity-30 border-white absolute -left-3 md:botom-10 md:-left-10 -top-8 md:-top-10"
     ></div>
@@ -9,7 +9,7 @@
     <main
       class="absolute md:w-[90%] w-[90%] top-1/2 max-sm:top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2"
     >
-      <header class="w-full flex flex-col gap-y-5 mb-5 text-center lg:text-left">
+      <header class="w-full flex flex-col gap-y-5 mb-5 text-center lg:text-left font-display">
         <section class="flex justify-between items-center gap-x-5">
           <h1
             class="text-white text-4xl md:text-6xl lg:text-9xl font-bold w-auto whitespace-nowrap"
@@ -127,7 +127,7 @@
         </span>
       </section>
     </main>
-  </div>
+  </section>
 </template>
 
 <script setup>

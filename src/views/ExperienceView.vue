@@ -1,98 +1,204 @@
 <template>
-  <main class="bg-slate-950 w-full">
+  <section id="experience">
     <div class="w-[80%] mx-auto py-20">
-      <section class="text-white my-10" v-motion-slide-left>
-        <SubTittleComponent name="Work" />
+      <section class="text-white flex flex-col gap-y-5 my-10" v-motion-slide-left>
+        <SubTittleComponent name="WORK" />
         <div
-          class="lg:w-full mx-auto w-full bg-sky-950 hover:bg-blue-950 transition-colors ease-in-out rounded-xl p-10"
+          class="lg:w-full mx-auto w-full bg-sky-950 hover:bg-blue-950 transition-colors ease-in-out rounded-xl"
+          v-for="(item, index) in workExperiences"
+          :key="index"
         >
-          <h1 class="text-2xl font-bold">Front End Developer</h1>
-          <h2 class="text-xl font-semibold text-green-500">Final Project Inosoft Bootcamp</h2>
-          <p class="text-lg font-semibold">September 2022 - May 2023</p>
-          <p class="text-lg font-semibold italic">Certification</p>
-          <ul class="list-disc text-justify ml-10">
-            <li>
-              Leading, directing, and managing the project team, which involves assigning tasks,
-              scheduling, and ensuring that each team member understands their roles and
-              responsibilities.
-            </li>
-            <li>
-              Developed 1 third-party website application for inventory management using Laravel,
-              Vue, and Mongodb within a week
-            </li>
-            <li>Connected API endpoints using Vuex and Axios</li>
-            <li>Conducted online meetings with team members 3 times a week</li>
-            <li>Presented the final project results to the mentor</li>
-          </ul>
+          <header
+            :class="[
+              'flex max-sm:flex-col justify-between items-center max-sm:items-start w-full mb-5 px-5 pt-5',
+              isHidden === item.title ? 'border-b border-b-white pb-5' : ''
+            ]"
+          >
+            <section class="flex flex-wrap items-center gap-x-2 w-full">
+              <h1 class="text-lg max-sm:text-md font-bold">{{ item.title }}</h1>
+              <p class="max-sm:hidden">@</p>
+              <h2 class="text-md max-sm:text-sm font-semibold text-green-500">
+                {{ item.company }}
+              </h2>
+            </section>
+            <section
+              class="flex flex-wrap-reverse items-center justify-end max-sm:justify-between w-[30%] max-sm:w-full gap-x-2"
+            >
+              <p class="text-md font-semibold max-sm:text-sm">
+                {{ item.date }}
+              </p>
+              <div class="cursor-pointer">
+                <Icon
+                  v-if="isHidden !== item.title"
+                  icon="ic:round-plus"
+                  width="2rem"
+                  height="2rem"
+                  style="color: #22c564"
+                  class="block"
+                  @click="isHidden = item.title"
+                />
+                <Icon
+                  v-else
+                  icon="ic:round-minus"
+                  width="2rem"
+                  height="2rem"
+                  style="color: #22c564"
+                  class="block"
+                  @click="isHidden = null"
+                />
+              </div>
+            </section>
+          </header>
+          <transition>
+            <section class="px-10 pb-10" v-if="isHidden === item.title">
+              <ul class="list-disc text-left ml-10 mb-5">
+                <li v-for="(value, number) in item.tasks" :key="number" class="mb-3">
+                  {{ value }}
+                </li>
+              </ul>
+              <footer>
+                <ul class="flex text-xs gap-x-5 text-gray-200">
+                  <li v-for="(value, number) in item.skills" :key="number">{{ value }}</li>
+                </ul>
+              </footer>
+            </section>
+          </transition>
         </div>
       </section>
-      <section class="text-white my-10">
-        <SubTittleComponent name="Activity" />
+      <section class="text-white flex flex-col gap-y-5 my-10" v-motion-slide-left>
+        <SubTittleComponent name="ACHIVEMENT" />
         <div
-          v-motion-slide-visible-right
-          class="lg:w-full mx-auto w-full bg-sky-950 hover:bg-blue-950 transition-colors ease-in-out rounded-xl p-10"
+          class="lg:w-full mx-auto w-full bg-sky-950 hover:bg-blue-950 transition-colors ease-in-out rounded-xl"
+          v-for="(item, index) in achivements"
+          :key="index"
         >
-          <h1 class="text-2xl font-bold">Participant</h1>
-          <h2 class="text-xl font-semibold text-green-500">
-            Application of ultrasonic wave-based pest-free IoT in Keloposepuluh village, sidoarjo
-          </h2>
-          <p class="text-lg font-semibold">December 2023 - February 2024</p>
-          <p class="text-lg font-semibold italic">Social Project</p>
-          <ul class="list-disc text-justify ml-10">
-            <li>
-              The Social Project Competition in creating Young Technology and Digital Sociopreneur
-              organized by Telkom Indonesia and Telkom University. My team successfully passed the
-              funding stage to realize the proposal submitted in KelopoSepuluh village, Sidoarjo,
-              East Java.
-            </li>
-            <li>
-              Secured 14 million in funding from Telkom Indonesia for the project's social
-              implementation
-            </li>
-            <li>Coordinated with Keloposepuluh village to implement the social project</li>
-            <li>Designed 2 ultrasonic wave-based IoT devices within 3 months</li>
-            <li>Arranged events and being the MC at the socialization event with farmer</li>
-          </ul>
+          <header
+            :class="[
+              'flex max-sm:flex-col justify-between items-center max-sm:items-start w-full mb-5 px-5 pt-5',
+              isHidden === item.title ? 'border-b border-b-white pb-5' : ''
+            ]"
+          >
+            <section class="flex flex-wrap items-center gap-x-2 w-full">
+              <h1 class="text-lg max-sm:text-md font-bold">{{ item.title }}</h1>
+              <p class="max-sm:hidden">@</p>
+              <h2 class="text-md max-sm:text-sm font-semibold text-green-500">
+                {{ item.organization }}
+              </h2>
+            </section>
+            <section
+              class="flex flex-wrap-reverse items-center justify-end max-sm:justify-between w-[30%] max-sm:w-full gap-x-2"
+            >
+              <p class="text-md font-semibold max-sm:text-sm">
+                {{ item.date }}
+              </p>
+              <div class="cursor-pointer">
+                <Icon
+                  v-if="isHidden !== item.title"
+                  icon="ic:round-plus"
+                  width="2rem"
+                  height="2rem"
+                  style="color: #22c564"
+                  class="block"
+                  @click="isHidden = item.title"
+                />
+                <Icon
+                  v-else
+                  icon="ic:round-minus"
+                  width="2rem"
+                  height="2rem"
+                  style="color: #22c564"
+                  class="block"
+                  @click="isHidden = null"
+                />
+              </div>
+            </section>
+          </header>
+          <transition>
+            <section class="px-5 pb-5" v-if="isHidden === item.title">
+              <p>
+                {{ item.description }}
+              </p>
+              <footer>
+                <ul class="flex text-xs gap-x-5 text-gray-200">
+                  <li v-for="(value, number) in item.skills" :key="number">{{ value }}</li>
+                </ul>
+              </footer>
+            </section>
+          </transition>
         </div>
       </section>
-      <section class="text-white" v-motion-slide-visible-left>
-        <SubTittleComponent name="Organizations" />
+      <section class="text-white flex flex-col gap-y-5 my-10" v-motion-slide-left>
+        <SubTittleComponent name="ACTIVITY" />
         <div
-          class="lg:w-full mx-auto my-5 w-full bg-sky-950 hover:bg-blue-950 transition-colors ease-in-out rounded-xl p-10"
+          class="lg:w-full mx-auto w-full bg-sky-950 hover:bg-blue-950 transition-colors ease-in-out rounded-xl"
+          v-for="(item, index) in activity"
+          :key="index"
         >
-          <h1 class="text-2xl font-bold">Web Development Division</h1>
-          <h2 class="text-xl font-semibold text-green-500">
-            Google Developer Student Club Telkom University Surabaya
-          </h2>
-          <p class="text-lg font-semibold">2023 – present</p>
-          <p class="text-lg font-semibold italic">UKM</p>
-          <ul class="list-disc text-justify ml-10">
-            <li>
-              Conducted joint learning with division members every month on google web technology
-            </li>
-          </ul>
-        </div>
-        <div
-          class="lg:w-full mx-auto w-full bg-sky-950 hover:bg-blue-950 transition-colors ease-in-out rounded-xl p-10"
-        >
-          <h1 class="text-2xl font-bold">Web Development Division</h1>
-          <h2 class="text-xl font-semibold text-green-500">Coder Telkom University Surabaya</h2>
-          <p class="text-lg font-semibold">2023 – present</p>
-          <p class="text-lg font-semibold italic">UKM</p>
-          <ul class="list-disc text-justify ml-10">
-            <li>Learned web technology with division members every 3 times a month</li>
-            <li>
-              Acted as the logistics division in the implementation of the breaking fast together
-              and handover of positions which was attended by 70 guests..
-            </li>
-          </ul>
+          <header
+            :class="[
+              'flex max-sm:flex-col justify-between items-center max-sm:items-start w-full mb-5 px-5 pt-5',
+              isHidden === item.title ? 'border-b border-b-white pb-5' : ''
+            ]"
+          >
+            <section class="flex flex-wrap items-center gap-x-2 w-full">
+              <h1 class="text-lg max-sm:text-md font-bold">{{ item.title }}</h1>
+              <p class="max-sm:hidden">@</p>
+              <h2 class="text-md max-sm:text-sm font-semibold text-green-500">
+                {{ item.organization }}
+              </h2>
+            </section>
+            <section
+              class="flex flex-wrap-reverse items-center justify-end max-sm:justify-between w-[30%] max-sm:w-full gap-x-2"
+            >
+              <p class="text-md font-semibold max-sm:text-sm">
+                {{ item.date }}
+              </p>
+              <div class="cursor-pointer">
+                <Icon
+                  v-if="isHidden !== item.title"
+                  icon="ic:round-plus"
+                  width="2rem"
+                  height="2rem"
+                  style="color: #22c564"
+                  class="block"
+                  @click="isHidden = item.title"
+                />
+                <Icon
+                  v-else
+                  icon="ic:round-minus"
+                  width="2rem"
+                  height="2rem"
+                  style="color: #22c564"
+                  class="block"
+                  @click="isHidden = null"
+                />
+              </div>
+            </section>
+          </header>
+          <transition>
+            <section class="px-5 pb-5" v-if="isHidden === item.title">
+              <ul class="list-disc text-left ml-10 mb-5">
+                <li v-for="(value, number) in item.tasks" :key="number" class="mb-3">
+                  {{ value }}
+                </li>
+              </ul>
+              <footer>
+                <ul class="flex text-xs gap-x-5 text-gray-200">
+                  <li v-for="(value, number) in item.skills" :key="number">{{ value }}</li>
+                </ul>
+              </footer>
+            </section>
+          </transition>
         </div>
       </section>
     </div>
-  </main>
+  </section>
 </template>
 
 <script setup>
-import { defineAsyncComponent } from 'vue'
+import { defineAsyncComponent, ref } from 'vue'
+import { workExperiences, achivements, activity } from '../assets/data.js'
+import { Icon } from '@iconify/vue'
 const SubTittleComponent = defineAsyncComponent(() => import('../components/BaseSubTittle.vue'))
+const isHidden = ref(null)
 </script>

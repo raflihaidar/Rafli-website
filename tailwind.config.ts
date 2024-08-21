@@ -4,9 +4,13 @@ export default {
   theme: {
     fontFamily: {
       display: ['"VT323", "JetBrains Mono"', 'monospace'],
-      fira: ['"Fira Code"', 'monospace']
+      fira: ['"Fira Code"', 'monospace'],
+      display2: ['poppins']
     },
     extend: {
+      backgroundColor: {
+        bubble: 'rgba(255, 255, 255, .01)'
+      },
       keyframes: {
         blink: {
           '0%, 49%': { background: 'rgba(255, 255, 255, 1)' },
@@ -58,6 +62,9 @@ export default {
         shrink: 'shrink 0.4s ease-out',
         fromLeft: ' from_left 0.4s ease-out',
         onLeave: ' onLeave 0.4s ease-out'
+      },
+      boxShadow: {
+        'inner-white': 'inset -5px -5px 1px rgba(255, 255, 255, 0.3)'
       }
     }
   },

@@ -1,5 +1,5 @@
 <template>
-  <main class="lg:w-[80%] w-[90%] h-screen mx-auto py-20">
+  <main class="bg-black lg:w-[80%] w-[90%] h-full mx-auto py-20">
     <section>
       <SubTittleComponent name="CONTACTS" />
       <div class="grid lg:grid-cols-2 gap-8 text-green-700" v-motion-fade>

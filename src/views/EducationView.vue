@@ -1,16 +1,14 @@
 <template>
-  <main class="bg-slate-950 w-full" id="projectView">
+  <div id="education">
     <div class="w-[80%] mx-auto py-20">
       <section class="my-20">
         <SubTittleComponent name="EDUCATION" />
-        <div
+        <figure
           v-motion-pop
-          class="lg:w-[35%] w-full bg-sky-950 hover:bg-blue-950 transition-colors ease-in-out rounded-b-xl"
+          class="lg:w-[35%] text-white w-full bg-sky-950 hover:bg-blue-950 transition-colors ease-in-out rounded-b-xl"
         >
-          <span>
-            <img src="../assets//img/Telkom-University.jpg" alt="Telkom University" />
-          </span>
-          <div class="w-full text-white px-2 py-3">
+          <img src="../assets//img/Telkom-University.jpg" alt="Telkom University" />
+          <figcaption class="w-full text-whites px-3 py-2 grid">
             <a
               href="https://ittelkom-sby.ac.id/"
               target="_blank"
@@ -18,9 +16,9 @@
               >Telkom University Campus Surabaya</a
             >
             <p class="text-lg">Sep 2022 - Present</p>
-            <p class="text-md italic">Bachelor;s Degree in Information Technology - S.Kom.</p>
-          </div>
-        </div>
+            <p class="text-md italic">Bachelor;s Degree in Information Technology - S.Kom</p>
+          </figcaption>
+        </figure>
       </section>
 
       <section class="py-10">
@@ -64,7 +62,7 @@
         </transition>
       </section>
     </div>
-  </main>
+  </div>
 </template>
 
 <script setup>

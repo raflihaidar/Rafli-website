@@ -3,7 +3,7 @@
     :href="url"
     target="_blank"
     :aria-label="iconName"
-    class="flex items-center gap-x-2 w-full cursor-pointer"
+    class="flex items-center gap-x-2 cursor-pointer"
   >
     <slot name="icon"> </slot>
     <p>{{ iconName }}</p>

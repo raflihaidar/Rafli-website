@@ -1,20 +1,17 @@
 <template>
-  <div class="bg-slate-950 relative scroll-smooth" id="about">
-    <!-- <div
-      class="w-60 h-60 z-0 md:w-[40rem] md:h-[40rem] rounded-full border border-opacity-30 border-white absolute -left-20 md:top-10 -bottom-20 md:-left-30"
-    ></div> -->
+  <div class="bg-black relative scroll-smooth w-full h-full" id="about">
     <div
       class="w-40 h-40 z-10 md:w-48 md:h-48 rounded-full border border-opacity-30 border-white absolute -right-10 md:botom-10 -bottom-20 md:-right-20"
     ></div>
-    <div class="w-[80%] h-full mx-auto py-20">
+    <div class="w-[80%] h-full mx-auto">
       <section class="text-slate-200 font-bold tracking-wide my-10">
         <SubTittleComponent name="ABOUT" />
-        <div class="flex flex-col lg:flex-row text-justify items-center">
-          <span class="lg:w-[20%] h-full w-full" v-motion-slide-left>
+        <div class="flex flex-col md:flex-row text-justify items-center">
+          <figure class="md:w-[20%] h-full w-full" v-motion-slide-left>
             <img src="../assets/img/foto_saya.png" alt="my photo" class="w-full h-full" />
-          </span>
+          </figure>
           <span
-            class="lg:w-[60%] h-full w-full mt-5 text-justify mx-auto grid gap-y-5"
+            class="md:w-[60%] h-full w-full mt-5 text-justify mx-auto grid gap-y-5"
             v-motion-slide-right
           >
             <p>

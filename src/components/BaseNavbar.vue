@@ -44,6 +44,7 @@
       :class="{ 'bg-blue-950 transition': isScrolling }"
       class="lg:hidden flex flex-col items-end gap-1 p-6 cursor-pointer"
       @click="change = !change"
+      s
     >
       <div
         class="bg-white w-6 h-1 rounded-full transition"
@@ -79,20 +80,11 @@
 
 <script setup>
 import { onMounted, ref } from 'vue'
-import { Icon } from '@iconify/vue'
 
-let change = ref(false)
-let isScrolling = ref(false)
+const change = ref(false)
+const isScrolling = ref(false)
 
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 0) {
-    isScrolling.value = true
-  } else {
-    isScrolling.value = false
-  }
-})
-
-let navigationMenu = ref([
+const navigationMenu = ref([
   {
     name: 'Home',
     page: '#home',
@@ -147,9 +139,17 @@ const handleClick = (index) => {
   navigationMenu.value[index].status = !navigationMenu.value[index].status
 }
 
-// onMounted(() => {
-//   navigationMenu.value.forEach((item) => (item.status ? router.push({ path: item.page }) : null))
-// })
+onMounted(() => {
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 0) {
+      isScrolling.value = true
+    } else {
+      isScrolling.value = false
+    }
+
+    window.addEventListener('scroll', console.log('Scroll Connected'))
+  })
+})
 </script>
 
 <style>
