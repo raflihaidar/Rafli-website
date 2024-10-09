@@ -1,17 +1,14 @@
 export const workExperiences = [
   {
+    id: 4,
     title: 'Web Developer',
-    company: 'Luar Sekolah',
-    date: 'Aug 2024 - Present',
-    tasks: [
-      'Leading, directing, and managing the project team, which involves assigning tasks scheduling and ensuring that each team member understands their roles and responsibilities',
-      'Developed 1 third-party website application for inventory management using Laravel, Vue, and Mongodb within a week',
-      'Connected API endpoints using Vuex and Axios',
-      'Conducted online meetings with team members 3 times a weekLed a team of 6 front-end developers in designing and implementing user interfaces, resulting in a 20% reduction in development time for the project.'
-    ],
-    skills: ['HTML', 'CSS', 'JavaScript', 'Vue', 'Laravel']
+    company: 'PT Wesclic Neotech Indonesia',
+    date: 'October 2024 - Present',
+    tasks: [],
+    skills: ['HTML', 'CSS', 'JavaScript', 'PHP', 'Laravel']
   },
   {
+    id: 3,
     title: 'Full Stack Developer',
     company: 'King Tech',
     date: 'May 2024 - Present',
@@ -21,6 +18,20 @@ export const workExperiences = [
     skills: ['HTML', 'CSS', 'JavaScript', 'Vue', 'Laravel']
   },
   {
+    id: 2,
+    title: 'Web Developer',
+    company: 'Luar Sekolah',
+    date: 'Aug 2024',
+    tasks: [
+      'Leading, directing, and managing the project team, which involves assigning tasks scheduling and ensuring that each team member understands their roles and responsibilities',
+      'Developed 1 third-party website application for inventory management using Laravel, Vue, and Mongodb within a week',
+      'Connected API endpoints using Vuex and Axios',
+      'Conducted online meetings with team members 3 times a weekLed a team of 6 front-end developers in designing and implementing user interfaces, resulting in a 20% reduction in development time for the project.'
+    ],
+    skills: ['HTML', 'CSS', 'JavaScript', 'Vue', 'Laravel']
+  },
+  {
+    id: 1,
     title: 'Lead Front End Developer',
     company: 'Inosoft Bootcamp',
     date: 'Sept 2022 - May 2023',
