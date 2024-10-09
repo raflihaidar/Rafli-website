@@ -75,7 +75,8 @@ const CopyIcon = defineAsyncComponent(() => import('../components/icons/CopyIcon
 import InosoftCertificate from '../assets//img/sertifikat-inosoft.jpg'
 import JavascriptCertif from '../assets//img/js-certification.jpg'
 import InnovillageCertification from '../assets/img/sertifikat-Innovillage.jpg'
-
+import LuarSekolahCertificate from '../assets/img/sertif-luarsekolah.jpg'
+import FapertaFairCertificate from '../assets/img/sertif-fapertafair.png'
 let modalStatus = ref(false)
 let currentIndex = ref(0)
 
@@ -119,6 +120,20 @@ const certificate = ref([
     id: 3,
     name: 'Innovillage 2023',
     img: InnovillageCertification,
+    url: '',
+    isHover: false
+  },
+  {
+    id: 4,
+    name: 'Web Developer Internship',
+    img: LuarSekolahCertificate,
+    url: '',
+    isHover: false
+  },
+  {
+    id: 5,
+    name: 'Finalist Essay Faperta Fair Batch 6',
+    img: FapertaFairCertificate,
     url: '',
     isHover: false
   }

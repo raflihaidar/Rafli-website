@@ -11,7 +11,7 @@
           <header
             :class="[
               'flex max-sm:flex-col justify-between items-center max-sm:items-start w-full mb-5 px-5 pt-5',
-              isHidden === item.title ? 'border-b border-b-white pb-5' : ''
+              isHidden === item.id ? 'border-b border-b-white pb-5' : ''
             ]"
           >
             <section class="flex flex-wrap items-center gap-x-2 w-full">
@@ -29,13 +29,13 @@
               </p>
               <div class="cursor-pointer">
                 <Icon
-                  v-if="isHidden !== item.title"
+                  v-if="isHidden !== item.id"
                   icon="ic:round-plus"
                   width="2rem"
                   height="2rem"
                   style="color: #22c564"
                   class="block"
-                  @click="isHidden = item.title"
+                  @click="isHidden = item.id"
                 />
                 <Icon
                   v-else
@@ -50,14 +50,14 @@
             </section>
           </header>
           <transition>
-            <section class="px-10 pb-10" v-if="isHidden === item.title">
+            <section class="px-10 pb-10" v-if="isHidden === item.id">
               <ul class="list-disc text-left ml-10 mb-5">
                 <li v-for="(value, number) in item.tasks" :key="number" class="mb-3">
                   {{ value }}
                 </li>
               </ul>
               <footer>
-                <ul class="flex text-xs gap-x-5 text-gray-200">
+                <ul class="flex text-xs gap-x-5 text-gray-200 justify-center md:justify-start">
                   <li v-for="(value, number) in item.skills" :key="number">{{ value }}</li>
                 </ul>
               </footer>

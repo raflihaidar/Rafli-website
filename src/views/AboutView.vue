@@ -6,10 +6,10 @@
     <div class="w-[80%] h-full mx-auto">
       <section class="text-slate-200 font-bold tracking-wide my-10">
         <SubTittleComponent name="ABOUT" />
-        <div class="flex flex-col md:flex-row text-justify items-center">
-          <figure class="md:w-[20%] h-full w-full" v-motion-slide-left>
+        <div>
+          <!-- <figure class="md:w-[20%] h-full w-full" v-motion-slide-left>
             <img src="../assets/img/foto_saya.png" alt="my photo" class="w-full h-full" />
-          </figure>
+          </figure> -->
           <span
             class="md:w-[60%] h-full w-full mt-5 text-justify mx-auto grid gap-y-5"
             v-motion-slide-right
