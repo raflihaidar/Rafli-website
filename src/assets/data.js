@@ -1,14 +1,6 @@
 export const workExperiences = [
   {
     id: 4,
-    title: 'Web Developer',
-    company: 'PT Wesclic Neotech Indonesia',
-    date: 'October 2024 - Present',
-    tasks: [],
-    skills: ['HTML', 'CSS', 'JavaScript', 'PHP', 'Laravel']
-  },
-  {
-    id: 3,
     title: 'Full Stack Developer',
     company: 'King Tech',
     date: 'May 2024 - Present',
@@ -16,6 +8,14 @@ export const workExperiences = [
       'Managed end-to-end development of web applications, delivering 2 projects on time with high client satisfaction'
     ],
     skills: ['HTML', 'CSS', 'JavaScript', 'Vue', 'Laravel']
+  },
+  {
+    id: 3,
+    title: 'Web Developer',
+    company: 'PT Wesclic Neotech Indonesia',
+    date: 'Oct 2024 - Dec 2024',
+    tasks: [],
+    skills: ['HTML', 'CSS', 'JavaScript', 'PHP', 'Laravel']
   },
   {
     id: 2,
@@ -58,6 +58,13 @@ export const achivements = [
     description:
       'Our team secured 14 million in funding from Telkom Indonesia in the Social Project Competition for creating digital technology and entrepreneurship initiatives for youth. This funding was used to implement the project in KelopoSepuluh village, Sidoarjo, East Java.',
     date: 'Feb 2024'
+  },
+  {
+    title: '1st place Explo-IT in ctf field ',
+    organization: 'HIMATISI Telkom University Campus Surabaya',
+    description:
+      'Achieved 1st place in the Capture The Flag (CTF) competition during Explo-IT, organized by HIMATISI Telkom University. Demonstrated exceptional problem-solving, teamwork, and cybersecurity skills by tackling various challenges in the field of ethical hacking and information security.',
+    date: '12 Dec 2024'
   }
 ]
 

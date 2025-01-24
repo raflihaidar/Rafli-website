@@ -1,3 +1,47 @@
+<script setup>
+import { defineAsyncComponent, ref } from 'vue'
+import { Icon } from '@iconify/vue'
+const SocialIcon = defineAsyncComponent(() => import('../components/BaseSocialIcon.vue'))
+
+let stringIndex = 0
+let typedStatus = ref(true)
+const text = ['I am a Web Developer', 'Especially a Full Stack Developer']
+let arrIndex = 0
+let description = ref('')
+
+const typedText = () => {
+  if (stringIndex < text[arrIndex].length) {
+    description.value += text[arrIndex].charAt(stringIndex)
+    stringIndex += 1
+    setTimeout(typedText, 100)
+  } else {
+    typedStatus.value = false
+    setTimeout(eraseText, 2000)
+  }
+}
+
+const eraseText = () => {
+  typedStatus.value = true
+  if (typedStatus.value && description.value != '') {
+    description.value = description.value.substring(0, stringIndex - 1)
+    stringIndex--
+    setTimeout(eraseText, 100)
+  } else {
+    arrIndex = (arrIndex + 1) % text.length
+    setTimeout(typedText, 100)
+  }
+}
+
+const openMyResume = () => {
+  window.open(
+    '/Resume Rafli Haidar Nashif.pdf',
+    '_blank' // <- This is what makes it open in a new window.
+  )
+}
+
+typedText()
+</script>
+
 <template>
   <section class="w-screen h-screen relative" id="home">
     <div
@@ -23,9 +67,12 @@
             <div
               class="w-[300px] max-sm:w-[200px] bg-white px-3 py-2 font-normal italic text-black rounded-full text-xl max-sm:text-md text-center"
             >
-              <p>Projects</p>
+              <p>My Resume</p>
             </div>
-            <button class="bg-white rounded-full p-2 cursor-pointer">
+            <button
+              class="bg-white rounded-full p-2 cursor-pointer hover:scale-110 transition-transform"
+              @click="openMyResume"
+            >
               <Icon icon="ic:round-arrow-right-alt" width="2rem" height="2rem" />
             </button>
           </div>
@@ -129,40 +176,3 @@
     </main>
   </section>
 </template>
-
-<script setup>
-import { defineAsyncComponent, ref } from 'vue'
-import { Icon } from '@iconify/vue'
-const SocialIcon = defineAsyncComponent(() => import('../components/BaseSocialIcon.vue'))
-
-let stringIndex = 0
-let typedStatus = ref(true)
-const text = ['I am a Web Developer', 'Especially a Full Stack Developer']
-let arrIndex = 0
-let description = ref('')
-
-const typedText = () => {
-  if (stringIndex < text[arrIndex].length) {
-    description.value += text[arrIndex].charAt(stringIndex)
-    stringIndex += 1
-    setTimeout(typedText, 100)
-  } else {
-    typedStatus.value = false
-    setTimeout(eraseText, 2000)
-  }
-}
-
-const eraseText = () => {
-  typedStatus.value = true
-  if (typedStatus.value && description.value != '') {
-    description.value = description.value.substring(0, stringIndex - 1)
-    stringIndex--
-    setTimeout(eraseText, 100)
-  } else {
-    arrIndex = (arrIndex + 1) % text.length
-    setTimeout(typedText, 100)
-  }
-}
-
-typedText()
-</script>

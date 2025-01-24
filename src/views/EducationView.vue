@@ -77,6 +77,8 @@ import JavascriptCertif from '../assets//img/js-certification.jpg'
 import InnovillageCertification from '../assets/img/sertifikat-Innovillage.jpg'
 import LuarSekolahCertificate from '../assets/img/sertif-luarsekolah.jpg'
 import FapertaFairCertificate from '../assets/img/sertif-fapertafair.png'
+import CTFCertificate from '../assets/img/Sertifikat_ExploIT.png'
+
 let modalStatus = ref(false)
 let currentIndex = ref(0)
 
@@ -134,6 +136,13 @@ const certificate = ref([
     id: 5,
     name: 'Finalist Essay Faperta Fair Batch 6',
     img: FapertaFairCertificate,
+    url: '',
+    isHover: false
+  },
+  {
+    id: 6,
+    name: 'Juara 1 Lomba CTF',
+    img: CTFCertificate,
     url: '',
     isHover: false
   }
