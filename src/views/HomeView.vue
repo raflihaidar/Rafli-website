@@ -3,43 +3,12 @@ import { defineAsyncComponent, ref } from 'vue'
 import { Icon } from '@iconify/vue'
 const SocialIcon = defineAsyncComponent(() => import('../components/BaseSocialIcon.vue'))
 
-let stringIndex = 0
-let typedStatus = ref(true)
-const text = ['I am a Web Developer', 'Especially a Full Stack Developer']
-let arrIndex = 0
-let description = ref('')
-
-const typedText = () => {
-  if (stringIndex < text[arrIndex].length) {
-    description.value += text[arrIndex].charAt(stringIndex)
-    stringIndex += 1
-    setTimeout(typedText, 100)
-  } else {
-    typedStatus.value = false
-    setTimeout(eraseText, 2000)
-  }
-}
-
-const eraseText = () => {
-  typedStatus.value = true
-  if (typedStatus.value && description.value != '') {
-    description.value = description.value.substring(0, stringIndex - 1)
-    stringIndex--
-    setTimeout(eraseText, 100)
-  } else {
-    arrIndex = (arrIndex + 1) % text.length
-    setTimeout(typedText, 100)
-  }
-}
-
 const openMyResume = () => {
   window.open(
     '/Resume Rafli Haidar Nashif.pdf',
     '_blank' // <- This is what makes it open in a new window.
   )
 }
-
-typedText()
 </script>
 
 <template>
@@ -47,10 +16,12 @@ typedText()
     <div
       class="w-40 h-40 z-10 md:w-48 md:h-48 rounded-full border border-opacity-30 border-white absolute -left-3 md:botom-10 md:-left-10 -top-8 md:-top-10"
     ></div>
+
     <div
       class="w-40 h-40 z-10 md:w-48 md:h-48 rounded-full border border-opacity-30 border-white absolute -right-10 md:botom-10 -bottom-20 md:-right-20"
     ></div>
-    <main
+
+    <section
       class="absolute md:w-[90%] w-[90%] top-1/2 max-sm:top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2"
     >
       <header class="w-full flex flex-col gap-y-5 mb-5 text-center lg:text-left font-display">
@@ -58,11 +29,11 @@ typedText()
           <h1
             class="text-white text-4xl md:text-6xl lg:text-9xl font-bold w-auto whitespace-nowrap"
           >
-            Full-stack
+            Rafli Haidar
           </h1>
 
           <div
-            class="w-full flex flex-grow justify-end max-sm:justify-start gap-x-3 items-center max-sm:absolute -bottom-3"
+            class="w-full flex flex-grow justify-end max-sm:justify-start gap-x-3 items-center max-sm:absolute -bottom-10"
           >
             <div
               class="w-[300px] max-sm:w-[200px] bg-white px-3 py-2 font-normal italic text-black rounded-full text-xl max-sm:text-md text-center"
@@ -78,9 +49,9 @@ typedText()
           </div>
         </section>
 
-        <section class="flex lg:justify-between justify-end items-center gap-x-10">
+        <section class="flex lg:justify-between items-center gap-x-10">
           <article
-            class="text-white max-w-[400px] max-sm:w-[90%] left-0 text-md text-left max-sm:absolute top-[45%]"
+            class="text-white max-w-[400px] max-sm:w-[90%] left-0 text-md text-left max-sm:absolute top-1/2"
           >
             <p>
               My goal is to <span class="text-green-500 font-bold">write maintainable</span>,
@@ -89,16 +60,14 @@ typedText()
               development was enjoyable.
             </p>
           </article>
-          <h1
-            class="text-white text-4xl md:text-6xl lg:text-9xl font-bold lg:self-end text-center w-auto"
-          >
-            Developer
+          <h1 class="text-white text-2xl md:text-6xl font-bold lg:self-end w-auto">
+            Full-stack Developer
           </h1>
         </section>
       </header>
 
       <section
-        class="lg:w-full max-sm:relative -bottom-32 w-[90%] gap-x-5 flex max-sm:grid grid-cols-2 gap-y-2 lg:justify-center justify-center mt-12"
+        class="lg:w-full max-sm:relative -bottom-40 left-0 w-[90%] gap-x-5 flex max-sm:grid grid-cols-2 gap-y-2 lg:justify-center justify-center mt-12"
       >
         <span
           class="w-auto flex items-center gap-x-2 text-white bg-gray-800 hover:bg-green-700 transition-colors cursor-pointer rounded-full p-3"
@@ -173,6 +142,6 @@ typedText()
           </SocialIcon>
         </span>
       </section>
-    </main>
+    </section>
   </section>
 </template>

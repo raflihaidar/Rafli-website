@@ -5,11 +5,11 @@
     ></div>
     <div class="w-[80%] h-full mx-auto">
       <section class="text-slate-200 font-bold tracking-wide my-10">
-        <SubTittleComponent name="ABOUT" />
-        <div>
-          <!-- <figure class="md:w-[20%] h-full w-full" v-motion-slide-left>
-            <img src="../assets/img/foto_saya.png" alt="my photo" class="w-full h-full" />
-          </figure> -->
+        <SubTittleComponent name="ABOUT ME" />
+        <div class="flex flex-col lg:flex-row text-justify items-center">
+          <figure class="md:w-[25%] h-full w-full" v-motion-slide-left>
+            <img src="../assets/img/about-me.jpeg" alt="my photo" class="w-full h-full" />
+          </figure>
           <span
             class="md:w-[60%] h-full w-full mt-5 text-justify mx-auto grid gap-y-5"
             v-motion-slide-right

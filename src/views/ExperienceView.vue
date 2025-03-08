@@ -65,6 +65,7 @@
           </transition>
         </div>
       </section>
+
       <section class="text-white flex flex-col gap-y-5 my-10" v-motion-slide-left>
         <SubTittleComponent name="ACHIVEMENT" />
         <div
@@ -127,6 +128,7 @@
           </transition>
         </div>
       </section>
+
       <section class="text-white flex flex-col gap-y-5 my-10" v-motion-slide-left>
         <SubTittleComponent name="ACTIVITY" />
         <div

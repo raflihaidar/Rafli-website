@@ -28,7 +28,6 @@
         >
           <span v-for="(item, index) in certificate" :key="index">
             <div
-              v-motion-pop-visible
               class="relative border-4 mt-3 border-slate-200 cursor-pointer w-full"
               @mouseover="item.isHover = true"
               @mouseleave="item.isHover = false"
