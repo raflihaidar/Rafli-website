@@ -33,7 +33,7 @@ const openMyResume = () => {
           </h1>
 
           <div
-            class="w-full flex flex-grow justify-end max-sm:justify-start gap-x-3 items-center max-sm:absolute -bottom-10"
+            class="w-full flex grow justify-end max-sm:justify-start gap-x-3 items-center max-sm:absolute -bottom-10"
           >
             <div
               class="w-[300px] max-sm:w-[200px] bg-white px-3 py-2 font-normal italic text-black rounded-full text-xl max-sm:text-md text-center"
