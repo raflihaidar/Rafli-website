@@ -1,6 +1,94 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@theme {
+  --font-*: initial;
+  --font-display: 'VT323', 'JetBrains Mono', monospace;
+  --font-fira: 'Fira Code', monospace;
+  --font-display2: poppins;
+
+  --background-color-bubble: rgba(255, 255, 255, 0.01);
+
+  --animate-blink: blink 1s infinite;
+  --animate-fadeout: fadeout 0.3s linear;
+  --animate-grow: grow 0.4s ease-in-out;
+  --animate-shrink: shrink 0.4s ease-out;
+  --animate-from-left: from_left 0.4s ease-out;
+  --animate-on-leave: onLeave 0.4s ease-out;
+
+  --shadow-inner-white: inset -5px -5px 1px rgba(255, 255, 255, 0.3);
+
+  @keyframes blink {
+    0%,
+    49% {
+      background: rgba(255, 255, 255, 1);
+    }
+    50,
+    60% {
+      background: rgba(255, 255, 255, 0.5);
+    }
+    61%,
+    100% {
+      background: transparent;
+    }
+  }
+  @keyframes fadeout {
+    0% {
+      opacity: 0.5;
+    }
+  }
+  @keyframes grow {
+    0% {
+      transform: scale(0.3);
+      opacity: 0.5;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  @keyframes shrink {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+  @keyframes from_left {
+    0% {
+      width: 0px;
+    }
+    100% {
+      width: 1.25rem;
+    }
+  }
+  @keyframes onLeave {
+    0% {
+      width: 1.25rem;
+    }
+    100% {
+      width: 0;
+    }
+  }
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
 
 @layer base {
   html {
