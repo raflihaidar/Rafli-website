@@ -1,5 +1,15 @@
 export const workExperiences = [
   {
+    id: 5,
+    title: 'Full Stack Developer',
+    company: 'PUTI Telkom University Surabaya',
+    date: 'April 2025 - Present',
+    tasks: [
+      'Managed end-to-end development of Student Service Center web applications'
+    ],
+    skills: ['HTML', 'CSS', '', 'Vue', 'Laravel', 'Mongodb', 'MySQL']
+  },
+  {
     id: 4,
     title: 'Full Stack Developer',
     company: 'King Tech',
@@ -7,7 +17,7 @@ export const workExperiences = [
     tasks: [
       'Managed end-to-end development of web applications, delivering 2 projects on time with high client satisfaction'
     ],
-    skills: ['HTML', 'CSS', 'JavaScript', 'Vue', 'Laravel']
+    skills: ['JavaScript', 'PHP', 'Vue', 'Laravel']
   },
   {
     id: 3,
