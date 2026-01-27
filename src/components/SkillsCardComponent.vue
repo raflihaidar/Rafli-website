@@ -6,7 +6,7 @@
         :href="item.url"
         target="_blank"
         v-motion-pop
-        class="bg-sky-950 flex gap-x-3 items-center lg:hover:bg-blue-900 lg:hover:bg-opacity-50 transition-colors px-5 py-5 text-center text-slate-200 text-lg font-bold cursor-pointer"
+        class="text-white border-[0.5px] flex items-center gap-x-3 shadow-lg cursor-pointer hover:scale-105 transition-transform rounded-xl border-white/10 bg-white/10 px-5 py-3"
       >
         <img :src="getImageUrl(item.image)" :alt="'image ' + item.name" class="w-8" />
         <p>{{ item.name }}</p>

@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-black relative scroll-smooth w-full h-full" id="about">
+  <div class="relative scroll-smooth w-full h-full" id="about">
     <div
       class="w-40 h-40 z-10 md:w-48 md:h-48 rounded-full border border-opacity-30 border-white absolute -right-10 md:botom-10 -bottom-20 md:-right-20"
     ></div>

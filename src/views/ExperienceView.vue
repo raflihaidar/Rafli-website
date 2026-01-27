@@ -2,9 +2,9 @@
   <section id="experience">
     <div class="w-[80%] mx-auto py-20">
       <section class="text-white flex flex-col gap-y-5 my-10" v-motion-slide-left>
-        <SubTittleComponent name="WORK" />
+        <SubTittleComponent name="WORK EXPERIENCES" />
         <div
-          class="lg:w-full mx-auto w-full bg-sky-950 hover:bg-blue-950 transition-colors ease-in-out rounded-xl"
+          class="lg:w-full mx-auto w-full border-white/10 bg-white/10 border-[0.5px] transition-colors ease-in-out rounded-xl"
           v-for="(item, index) in workExperiences"
           :key="index"
         >
@@ -17,7 +17,7 @@
             <section class="flex flex-wrap items-center gap-x-2 w-full">
               <h1 class="text-lg max-sm:text-md font-bold">{{ item.title }}</h1>
               <p class="max-sm:hidden">@</p>
-              <h2 class="text-md max-sm:text-sm font-semibold text-green-500">
+              <h2 class="text-md max-sm:text-sm font-semibold text-base-green">
                 {{ item.company }}
               </h2>
             </section>
@@ -50,15 +50,21 @@
             </section>
           </header>
           <transition>
-            <section class="px-10 pb-10" v-if="isHidden === item.id">
-              <ul class="list-disc text-left ml-10 mb-5">
+            <section class="px-5 pb-5" v-if="isHidden === item.id">
+              <ul class="list-disc text-left ml-5 mb-8 text-slate-300">
                 <li v-for="(value, number) in item.tasks" :key="number" class="mb-3">
                   {{ value }}
                 </li>
               </ul>
               <footer>
-                <ul class="flex text-xs gap-x-5 text-gray-200 justify-center md:justify-start">
-                  <li v-for="(value, number) in item.skills" :key="number">{{ value }}</li>
+                <ul class="flex text-xs gap-x-5 text-slate-300 justify-center md:justify-start">
+                  <li
+                    class="border-white/10 bg-white/10 border-[0.5px] p-2 rounded-xl"
+                    v-for="(value, number) in item.skills"
+                    :key="number"
+                  >
+                    {{ value }}
+                  </li>
                 </ul>
               </footer>
             </section>
@@ -67,9 +73,9 @@
       </section>
 
       <section class="text-white flex flex-col gap-y-5 my-10" v-motion-slide-left>
-        <SubTittleComponent name="ACHIVEMENT" />
+        <SubTittleComponent name="ACHIVEMENTS" />
         <div
-          class="lg:w-full mx-auto w-full bg-sky-950 hover:bg-blue-950 transition-colors ease-in-out rounded-xl"
+          class="lg:w-full mx-auto w-full border-white/10 bg-white/10 border-[0.5px] transition-colors ease-in-out rounded-xl"
           v-for="(item, index) in achivements"
           :key="index"
         >
@@ -82,7 +88,7 @@
             <section class="flex flex-wrap items-center gap-x-2 w-full">
               <h1 class="text-lg max-sm:text-md font-bold">{{ item.title }}</h1>
               <p class="max-sm:hidden">@</p>
-              <h2 class="text-md max-sm:text-sm font-semibold text-green-500">
+              <h2 class="text-md max-sm:text-sm font-semibold text-base-green">
                 {{ item.organization }}
               </h2>
             </section>
@@ -116,7 +122,7 @@
           </header>
           <transition>
             <section class="px-5 pb-5" v-if="isHidden === item.title">
-              <p>
+              <p class="text-slate-300">
                 {{ item.description }}
               </p>
               <footer>
@@ -130,9 +136,9 @@
       </section>
 
       <section class="text-white flex flex-col gap-y-5 my-10" v-motion-slide-left>
-        <SubTittleComponent name="ACTIVITY" />
+        <SubTittleComponent name="ACTIVITIES" />
         <div
-          class="lg:w-full mx-auto w-full bg-sky-950 hover:bg-blue-950 transition-colors ease-in-out rounded-xl"
+          class="lg:w-full mx-auto w-full border-white/10 bg-white/10 border-[0.5px] transition-colors ease-in-out rounded-xl"
           v-for="(item, index) in activity"
           :key="index"
         >
@@ -145,7 +151,7 @@
             <section class="flex flex-wrap items-center gap-x-2 w-full">
               <h1 class="text-lg max-sm:text-md font-bold">{{ item.title }}</h1>
               <p class="max-sm:hidden">@</p>
-              <h2 class="text-md max-sm:text-sm font-semibold text-green-500">
+              <h2 class="text-md max-sm:text-sm font-semibold text-base-green">
                 {{ item.organization }}
               </h2>
             </section>
@@ -179,8 +185,8 @@
           </header>
           <transition>
             <section class="px-5 pb-5" v-if="isHidden === item.title">
-              <ul class="list-disc text-left ml-10 mb-5">
-                <li v-for="(value, number) in item.tasks" :key="number" class="mb-3">
+              <ul class="list-disc text-left ml-5 mb-5">
+                <li class="text-slate-300 mb-3" v-for="(value, number) in item.tasks" :key="number">
                   {{ value }}
                 </li>
               </ul>

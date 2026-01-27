@@ -3,10 +3,10 @@
     :href="url"
     target="_blank"
     :aria-label="iconName"
-    class="flex items-center gap-x-2 cursor-pointer"
+    class="flex items-center gap-x-2 cursor-pointer justify-center text-4xl"
   >
     <slot name="icon"> </slot>
-    <p>{{ iconName }}</p>
+    <p v-if="iconName">{{ iconName }}</p>
   </a>
 </template>
 

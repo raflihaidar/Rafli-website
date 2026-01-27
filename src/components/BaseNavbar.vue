@@ -1,46 +1,48 @@
 <template>
   <nav
-    class="w-full h-auto fixed z-20 top-0 flex items-center justify-between md:px-3"
-    :class="{ 'bg-blue-950 transition': isScrolling }"
+    class="w-full h-auto fixed z-20 top-0 flex justify-around items-center md:px-3 md:py-5"
+    :class="{
+      'bg-base/40 backdrop-saturate-50 backdrop-blur-md shadow-lg transition': isScrolling
+    }"
   >
-    <section class="pl-4">
-      <a href="#home" class="text-white text-md md:text-xl font-normal flex md:flex-col gap-x-2">
-        <span>Rafli</span><span>Haidar</span>
+    <section class="w-[30%]">
+      <a href="#home" class="text-white text-md md:text-xl">
+        <figure class="w-full flex items-center gap-x-3">
+          <div class="w-12 rounded-full overflow-hidden">
+            <img src="../assets/img/logo.png" alt="main logo" class="w-full h-full" />
+          </div>
+          <h2 class="text-white font-extrabold">
+            raflihaidar<span class="text-base-green">.my.id</span>
+          </h2>
+        </figure>
       </a>
     </section>
-    <div class="w-full mx-auto lg:flex hidden justify-center items-center py-5">
-      <section
-        class="text-slate-200 font-semibold transition-colors text-lg flex justify-between cursor-pointer gap-x-5"
-      >
+    <div class="w-[40%] lg:flex hidden">
+      <section class="text-slate-200 font-semibold flex justify-between gap-x-5">
         <a
-          class="py-2 px-3 rounded-lg group"
-          :class="item.status ? 'text-green-700' : 'hover:text-green-600'"
-          @mouseleave="onLeave(index)"
-          @mouseenter="onEnter(index)"
           v-for="(item, index) in navigationMenu"
           :key="index"
           :href="item.page"
+          class="relative py-2 px-3 rounded-lg group cursor-pointer"
+          :class="item.status ? ' text-base-green' : 'text-white hover: text-base-green'"
+          @mouseenter="onEnter(index)"
+          @mouseleave="onLeave(index)"
           @click="handleClick(index)"
         >
           {{ item.name }}
-          <span>
-            <transition name="border">
-              <hr
-                class="b-bottom transition-transform border-yellow-500 border-0"
-                v-if="item.status || item.hover"
-                :class="
-                  item.status
-                    ? 'w-5 border-[1.5px] '
-                    : 'group-hover:text-green-600 group-hover:w-5 w-0 group-hover:border-[1.5px] group-hover:animate-fromLeft mx-0'
-                "
-              />
-            </transition>
+
+          <!-- underline -->
+          <span class="block w-full mt-1">
+            <span
+              class="block h-[1.5px] bg-yellow-500 origin-left scale-x-0 transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] will-change-transform group-hover:scale-x-100"
+              :class="item.status ? 'scale-x-100' : ''"
+            ></span>
           </span>
         </a>
       </section>
     </div>
 
-    <div
+    <!-- <div
       :class="{ 'bg-blue-950 transition': isScrolling }"
       class="lg:hidden flex flex-col items-end gap-1 p-6 cursor-pointer"
       @click="change = !change"
@@ -58,9 +60,9 @@
         class="bg-white w-6 h-1 rounded-full transition"
         :class="change ? 'translate-x-0 -translate-y-[8px] rotate-45 transform' : null"
       ></div>
-    </div>
+    </div> -->
 
-    <div
+    <!-- <div
       v-if="change"
       class="lg:hidden fixed flex flex-col items-start pt-5 bg-black opacity-90 z-10 w-[90%] h-[80%] top-[55%] left-[50%] lg:text-left text-center -translate-x-[50%] -translate-y-[50%] border border-white rounded-lg"
     >
@@ -74,7 +76,7 @@
       >
         {{ item.name }}
       </a>
-    </div>
+    </div> -->
   </nav>
 </template>
 

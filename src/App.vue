@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-black w-full h-full font-display2 selection:bg-green-700 scroll-smooth overflow-x-hidden"
+    class="bg-base w-full h-full font-display2 selection:bg-green-700 scroll-smooth overflow-x-hidden"
   >
     <BaseNavbar />
     <header>

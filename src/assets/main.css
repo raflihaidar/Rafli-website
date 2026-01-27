@@ -6,13 +6,15 @@
   --font-fira: 'Fira Code', monospace;
   --font-display2: poppins;
 
+  --color-base: #0f172b;
+  --color-base-green: #00dc82;
   --background-color-bubble: rgba(255, 255, 255, 0.01);
 
   --animate-blink: blink 1s infinite;
   --animate-fadeout: fadeout 0.3s linear;
   --animate-grow: grow 0.4s ease-in-out;
   --animate-shrink: shrink 0.4s ease-out;
-  --animate-from-left: from_left 0.4s ease-out;
+  --animate-from-left: from_left 10s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   --animate-on-leave: onLeave 0.4s ease-out;
 
   --shadow-inner-white: inset -5px -5px 1px rgba(255, 255, 255, 0.3);
@@ -54,22 +56,6 @@
       transform: scale(0);
     }
   }
-  @keyframes from_left {
-    0% {
-      width: 0px;
-    }
-    100% {
-      width: 1.25rem;
-    }
-  }
-  @keyframes onLeave {
-    0% {
-      width: 1.25rem;
-    }
-    100% {
-      width: 0;
-    }
-  }
 }
 
 /*
@@ -93,5 +79,19 @@
 @layer base {
   html {
     overflow-x: hidden;
+  }
+}
+
+@layer components {
+  .btn-glass {
+    @apply flex items-center gap-x-3
+      px-5 py-3
+      rounded-full
+      border border-white/10
+      bg-white/10
+      shadow-xl
+      cursor-pointer
+      transition-transform
+      hover:scale-105;
   }
 }

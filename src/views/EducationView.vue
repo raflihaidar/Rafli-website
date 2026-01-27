@@ -5,7 +5,7 @@
         <SubTittleComponent name="EDUCATION" />
         <figure
           v-motion-pop
-          class="lg:w-[35%] text-white w-full bg-sky-950 hover:bg-blue-950 transition-colors ease-in-out rounded-b-xl"
+          class="lg:w-[35%] text-white w-full border-white/10 bg-white/10 border-[0.5px] transition-colors ease-in-out rounded-b-xl"
         >
           <img src="../assets//img/Telkom-University.jpg" alt="Telkom University" />
           <figcaption class="w-full text-whites px-3 py-2 grid">
@@ -15,8 +15,8 @@
               class="text-xl font-semibold hover:underline cursor-pointer transition"
               >Telkom University Campus Surabaya</a
             >
-            <p class="text-lg">Sep 2022 - Present</p>
-            <p class="text-md italic">Bachelor;s Degree in Information Technology - S.Kom</p>
+            <p>Sep 2022 - Present</p>
+            <p class="text-sm italic">Bachelor;s Degree in Information Technology - S.Kom</p>
           </figcaption>
         </figure>
       </section>
