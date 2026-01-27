@@ -4,7 +4,7 @@ import { Icon } from '@iconify/vue'
 const SocialIcon = defineAsyncComponent(() => import('../components/BaseSocialIcon.vue'))
 
 const openMyResume = () => {
-  window.open('/Resume Rafli Haidar Nashif.pdf', '_blank')
+  window.open('/CV Rafli Haidar Nashif 2026.pdf', '_blank')
 }
 </script>
 
