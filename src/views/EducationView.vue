@@ -15,8 +15,9 @@
               class="text-xl font-semibold hover:underline cursor-pointer transition"
               >Telkom University Campus Surabaya</a
             >
-            <p>Sep 2022 - Present</p>
-            <p class="text-sm italic">Bachelor;s Degree in Information Technology - S.Kom</p>
+            <p>Sept 2022 - Present</p>
+            <p class="italic">Bachelor;s Degree in Information Technology</p>
+            <p class="text-sm italic">GPA : 3.78 / 4.00</p>
           </figcaption>
         </figure>
       </section>

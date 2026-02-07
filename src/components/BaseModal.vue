@@ -94,13 +94,13 @@
     <div v-if="currentIndex != 1">
       <RightArrowIcon
         @click="prevSlide"
-        class="absolute top-1/2 md:left-20 left-3 cursor-pointer hover:scale-110 transition-transform"
+        class="absolute top-1/2 md:left-20 left-3 cursor-pointer hover:scale-110 transition-transform text-white"
       />
     </div>
     <div
       v-if="currentIndex < data.length"
       @click="nextSlide"
-      class="absolute top-1/2 md:right-20 right-3 cursor-pointer hover:scale-110 transition-transform"
+      class="text-white absolute top-1/2 md:right-20 right-3 cursor-pointer hover:scale-110 transition-transform"
     >
       <LeftArrowIcon />
     </div>
