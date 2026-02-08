@@ -1,7 +1,7 @@
 <template>
   <div id="education">
     <div class="w-[80%] mx-auto py-20">
-      <section class="my-20">
+      <!-- <section class="my-20">
         <SubTittleComponent name="EDUCATION" />
         <figure
           v-motion-pop
@@ -20,7 +20,7 @@
             <p class="text-sm italic">GPA : 3.78 / 4.00</p>
           </figcaption>
         </figure>
-      </section>
+      </section> -->
 
       <section class="py-10">
         <SubTittleComponent name="CERTIFICATIONS & AWARDS" />

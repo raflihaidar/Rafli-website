@@ -3,12 +3,12 @@
     <div
       class="w-40 h-40 z-10 md:w-48 md:h-48 rounded-full border border-opacity-30 border-white absolute -right-10 md:botom-10 -bottom-20 md:-right-20"
     ></div>
-    <div class="w-[80%] h-full mx-auto">
-      <section class="text-slate-200 font-bold tracking-wide my-10">
+    <div class="w-[80%] h-full mx-auto flex items-start gap-x-10">
+      <section class="w-[40%] text-slate-200 font-bold tracking-wide my-10">
         <SubTittleComponent name="ABOUT ME" />
-        <div class="flex flex-col lg:flex-row text-justify items-center">
+        <div class="w-full flex flex-col lg:flex-row text-justify items-center">
           <section
-            class="w-1/2 pb-5 border-white/10 bg-white/10 border-[0.5px] transition-colors ease-in-out rounded-xl overflow-hidden"
+            class="w-full pb-5 border-white/10 bg-white/10 border-[0.5px] transition-colors ease-in-out rounded-xl overflow-hidden"
           >
             <div class="w-full h-28 bg-gradient-to-r from-green-500 to-base-green relative">
               <figure
@@ -57,10 +57,9 @@
                 <div class="mt-5">
                   <h4>About</h4>
                   <p class="text-sm text-justify mt-2">
-                    Hi i'm Rafli - A Full-Stack Web Developer with 2+ years of experience in web
+                    Hi i'm Rafli - A Full-Stack Developer with 2+ years of experience in web
                     development, specializing in enterprise systems, internal platforms, and
-                    consumer applications Proficient in Vue.js, JavaScript, Laravel, Node.js,
-                    Express.js, PHP. Committed to building scalable web systems and delivering
+                    consumer applications. Committed to building scalable web systems and delivering
                     impactful digital solutions
                   </p>
                 </div>
@@ -79,45 +78,31 @@
               </div>
             </section>
           </section>
-          <!-- <section>
-            <p class="text-sm mb-5 w-[60%]">
-              Hi i'm Rafli - A <span class="text-green-600"> Full-Stack Web Developer</span> with 2+
-              years of experience in web development, specializing in
-              <span class="text-green-600"
-                >enterprise systems, internal platforms, and consumer applications</span
-              >. Proficient in Vue.js, JavaScript, Laravel, Node.js, Express.js, PHP.
-              <span class="text-green-600"
-                >Committed to building scalable web systems and delivering impactful digital
-                solutions</span
-              >.
-            </p>
-            <div>
-              <h3 class="text-lg font-semibold">Education</h3>
-              <figure
-                v-motion-pop
-                class="lg:w-[50%] text-white w-full border-white/10 bg-white/10 border-[0.5px] transition-colors ease-in-out rounded-b-xl"
-              >
-                <img src="../assets//img/Telkom-University.jpg" alt="Telkom University" />
-                <figcaption class="w-full text-whites px-3 py-2 grid">
-                  <a
-                    href="https://ittelkom-sby.ac.id/"
-                    target="_blank"
-                    class="text-lg font-semibold hover:underline cursor-pointer transition"
-                    >Telkom University Campus Surabaya</a
-                  >
-                  <p>Sept 2022 - Present</p>
-                  <p class="italic">Bachelor;s Degree in Information Technology</p>
-                  <p class="text-sm italic">GPA : 3.78 / 4.00</p>
-                </figcaption>
-              </figure>
-            </div>
-          </section> -->
         </div>
       </section>
 
-      <section class="my-12 py-10 w-full">
-        <SubTittleComponent name="SKILLS & TOOLS" />
-        <SkillsCardComponent />
+      <section class="my-12 py-10 w-[60%]">
+        <div>
+          <SubTittleComponent name="SKILLS & TOOLS" />
+          <SkillsCardComponent />
+        </div>
+        <div class="mt-10">
+          <SubTittleComponent name="EDUCATION" />
+          <div
+            class="flex items-center py-5 px-3 gap-x-5 text-white border-white/10 bg-white/10 border-[0.5px] transition-colors ease-in-out rounded-xl"
+          >
+            <div class="border-white/10 bg-white/10 border-[0.5px] p-3 rounded-xl">
+              <img src="../assets/img/telu.png" alt="Education Image" class="size-7" />
+            </div>
+            <div class="w-full">
+              <div class="flex justify-between items-center">
+                <h4>Telkom University</h4>
+                <p class="text-sm">Sept 2022 - Present</p>
+              </div>
+              <p class="text-sm">Information Technology - GPA : 3.78</p>
+            </div>
+          </div>
+        </div>
       </section>
     </div>
   </div>

@@ -1,6 +1,6 @@
 <!-- Template Vue -->
 <template>
-  <main class="w-full h-full grid lg:grid-cols-4 grid-cols-1 gap-8">
+  <main class="w-full h-full grid lg:grid-cols-4 grid-cols-1 gap-5 text-sm">
     <transition :css="false" v-for="(item, index) in skillFiltered" :key="index" name="card-skills">
       <a
         :href="item.url"
@@ -8,7 +8,7 @@
         v-motion-pop
         class="text-white border-[0.5px] flex items-center gap-x-3 shadow-lg cursor-pointer hover:scale-105 transition-transform rounded-xl border-white/10 bg-white/10 px-5 py-3"
       >
-        <img :src="getImageUrl(item.image)" :alt="'image ' + item.name" class="w-8" />
+        <Icon :icon="item.icon" class="size-5" />
         <p>{{ item.name }}</p>
       </a>
     </transition>
@@ -17,84 +17,96 @@
 
 <script setup>
 import { onMounted, ref } from 'vue'
-
+import { Icon } from '@iconify/vue'
 const skillFiltered = ref(null)
 const skills = [
   {
     name: 'Javascript',
-    image: 'js.png',
+    icon: 'logos:javascript',
     url: 'https://www.javascript.com',
     category: 'language'
   },
   {
     name: 'Typescript',
-    image: 'ts.png',
+    icon: 'logos:typescript-icon',
     url: 'https://www.javascript.com',
     category: 'language'
   },
   {
     name: 'Vue',
-    image: 'vue.svg',
+    icon: 'logos:vue',
     url: 'https://vuejs.org/',
     category: 'language'
   },
   {
     name: 'Nuxt',
-    image: 'nuxt.png',
+    icon: 'logos:nuxt-icon',
     url: 'https://vuejs.org/',
     category: 'language'
   },
   {
     name: 'Node js',
-    image: 'node js.png',
+    icon: 'logos:nodejs-icon',
     url: 'https://vuejs.org/',
     category: 'language'
   },
   {
     name: 'Express',
-    image: 'express.svg',
+    icon: 'skill-icons:expressjs-light',
+    url: 'https://expressjs.com/',
+    category: 'language'
+  },
+  {
+    name: 'Laravel',
+    icon: 'logos:laravel',
     url: 'https://expressjs.com/',
     category: 'language'
   },
   {
     name: 'Mysql',
-    image: 'mysql.png',
+    icon: 'skill-icons:mysql-light',
     url: 'https://www.mysql.com/',
     category: 'database'
   },
   {
-    name: 'Tailwind css',
-    image: 'tailwind.svg',
+    name: 'MongoDB',
+    icon: 'skill-icons:mongodb',
+    url: 'https://www.mysql.com/',
+    category: 'database'
+  },
+  {
+    name: 'Tailwind',
+    icon: 'vscode-icons:file-type-tailwind',
     url: 'https://tailwindcss.com/',
     category: 'styling'
   },
   {
     name: 'Bootstrap',
-    image: 'bootstrap.png',
+    icon: 'logos:bootstrap',
     url: 'https://getbootstrap.com/',
     category: 'styling'
   },
   {
     name: 'Jest',
-    image: 'jest.png',
+    icon: 'logos:jest',
     url: 'https://getbootstrap.com/',
     category: 'tools'
   },
   {
     name: 'Git',
-    image: 'git.png',
+    icon: 'logos:git-icon',
     url: 'https://getbootstrap.com/',
     category: 'tools'
   },
   {
     name: 'Prisma',
-    image: 'prisma.png',
+    icon: 'vscode-icons:file-type-prisma',
     url: 'https://getbootstrap.com/',
     category: 'tools'
   },
   {
     name: 'Linux',
-    image: 'linux.png',
+    icon: 'flat-color-icons:linux',
     url: 'https://getbootstrap.com/',
     category: 'tools'
   }
