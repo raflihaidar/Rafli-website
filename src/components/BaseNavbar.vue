@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="w-full h-auto fixed z-20 top-0 flex justify-between items-center px-4 py-4 md:px-3 md:py-5"
+    class="w-full h-auto fixed z-20 top-0 flex justify-between p-3 md:justify-around items-center md:px-3 md:py-5"
     :class="{
       'bg-base/40 backdrop-saturate-50 backdrop-blur-md shadow-lg transition': isScrolling
     }"
@@ -9,10 +9,10 @@
     <section class="lg:w-[30%]">
       <a href="#home" class="text-white text-md md:text-xl">
         <figure class="flex items-center gap-x-3">
-          <div class="hidden md:blcok w-12 rounded-full overflow-hidden">
+          <div class="hidden md:block w-12 rounded-full overflow-hidden">
             <img src="../assets/img/logo.png" alt="main logo" class="w-full h-full" />
           </div>
-          <h2 class="text-white font-extrabold text-lg md:text-base">
+          <h2 class="text-white font-extrabold text-lg">
             raflihaidar<span class="text-base-green">.my.id</span>
           </h2>
         </figure>
