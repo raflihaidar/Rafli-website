@@ -57,11 +57,13 @@
                 </li>
               </ul>
               <footer>
-                <ul class="flex text-xs gap-x-5 text-slate-300 justify-center md:justify-start">
+                <ul
+                  class="w-full flex flex-wrap gap-x-3 gap-y-2 text-xs text-slate-300 justify-center md:justify-start"
+                >
                   <li
-                    class="border-white/10 bg-white/10 border-[0.5px] p-2 rounded-xl"
                     v-for="(value, number) in item.skills"
                     :key="number"
+                    class="border-white/10 bg-white/10 border-[0.5px] px-3 py-1 rounded-xl whitespace-nowrap"
                   >
                     {{ value }}
                   </li>
@@ -183,20 +185,18 @@
               </div>
             </section>
           </header>
-          <transition>
-            <section class="px-5 pb-5" v-if="isHidden === item.title">
-              <ul class="list-disc text-left ml-5 mb-5">
-                <li class="text-slate-300 mb-3" v-for="(value, number) in item.tasks" :key="number">
-                  {{ value }}
-                </li>
+          <section class="px-5 pb-5" v-if="isHidden === item.title">
+            <ul class="list-disc text-left ml-5 mb-5">
+              <li class="text-slate-300 mb-3" v-for="(value, number) in item.tasks" :key="number">
+                {{ value }}
+              </li>
+            </ul>
+            <footer class="w-full">
+              <ul class="w-full flex text-xs gap-x-5 text-gray-200">
+                <li v-for="(value, number) in item.skills" :key="number">{{ value }}</li>
               </ul>
-              <footer>
-                <ul class="flex text-xs gap-x-5 text-gray-200">
-                  <li v-for="(value, number) in item.skills" :key="number">{{ value }}</li>
-                </ul>
-              </footer>
-            </section>
-          </transition>
+            </footer>
+          </section>
         </div>
       </section>
     </div>

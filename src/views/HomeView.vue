@@ -15,17 +15,13 @@ const openMyResume = () => {
     ></div>
 
     <section
-      class="absolute md:w-[90%] w-[90%] top-1/2 max-sm:top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col text-white items-center gap-y-10"
+      class="absolute md:w-[90%] w-[90%] top-1/2 max-sm:top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col text-white items-center gap-y-10 lg:gap-y-10"
     >
-      <h1 class="text-xl lg:text-7xl font-extrabold w-auto whitespace-nowrap">
-        Rafli Haidar Nashif
-      </h1>
+      <h1 class="text-4xl lg:text-7xl font-extrabold w-auto text-center">Rafli Haidar Nashif</h1>
 
-      <h3 class="text-3xl text-base-green font-bold">Full-stack Developer</h3>
+      <h3 class="text-2xl lg:text-3xl text-base-green font-bold">Full-stack Developer</h3>
 
-      <section
-        class="lg:w-full max-sm:relative -bottom-40 left-0 w-[90%] gap-x-5 flex max-sm:grid grid-cols-2 gap-y-2 lg:justify-center justify-center"
-      >
+      <section class="lg:w-full left-0 w-[90%] gap-x-5 flex lg:justify-center justify-center">
         <SocialIcon
           class="text-white hover:text-base-green"
           url="mailto:www.rafli.haidar30@gmail.com"
@@ -60,8 +56,8 @@ const openMyResume = () => {
       <section>
         <div class="bg-base" @click="openMyResume">
           <div class="btn-glass">
-            <Icon icon="weui:download-outlined" class="text-2xl" />
-            <h3 class="text-lg text-white">Download my CV</h3>
+            <Icon icon="weui:download-outlined" class="size-6" />
+            <h3 class="text-sm md:text-lg text-white">Download my CV</h3>
           </div>
         </div>
       </section>

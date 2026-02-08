@@ -2,14 +2,14 @@ export const workExperiences = [
   {
     id: 5,
     title: 'Front-end Developer',
-    company: 'King Tech',
+    company: 'PT. Raja Teknologi Digital',
     date: 'May 2024 - Present',
     tasks: [
-      'Successfully developed 6 web applications tailored to client requests, ensuring their satisfaction and meeting their needs.',
-      'Utilized a range of technologies including Vue, Tailwind, Vuetify, and Laravel to build and maintain frontend applications.',
-      'Collaborated with cross-functional teams to design and implement scalable, user-friendly web solutions.',
-      'Conducted thorough testing and debugging to ensure optimal performance and security.',
-      'Implemented responsive design principles to enhance user experience across various devices.'
+      'Successfully developed 6 web applications tailored to client requirements, achieving 100% project completion within scope and timeline.',
+      'Collaborated with backend developers, UI/UX designers, and project managers to deliver high-quality solutions.',
+      'Improved frontend performance by optimizing rendering and asset loading, resulting in up to 25% faster page load times.',
+      'Implemented responsive design ensuring compatibility across 3+ device types (desktop, tablet, mobile).',
+      'Conducted thorough testing and debugging to ensure optimal performance and security.'
     ],
     skills: ['JavaScript', 'PHP', 'Vue', 'Nuxt', 'Vuetify', 'Laravel', 'GSAP']
   },
@@ -19,10 +19,10 @@ export const workExperiences = [
     company: 'PUTI Telkom University Surabaya',
     date: 'April 2025 - Dec 2025',
     tasks: [
-      'Managed end-to-end development of Student Service Center web applications',
-      'Developed and maintained 2 internal web systems supporting academic and administrative services at Telkom University Campus Surabaya.',
-      'Built end-to-end features using MVC architecture, improving system maintainability and scalability.',
-      'Collaborated with cross-functional teams to deliver features, reducing service response time by ±30%.'
+      'Developed and maintained 2 internal websites supporting academic services at Telkom UniversitySurabaya, serving over 5,000 active users.',
+      'Managed a ticketing system handling more than 3,000 service tickets used by students and staff.',
+      'Optimized application performance, reducing response time by 30%.',
+      'Improved business process efficiency through automation of academic services, accelerating servicecompletion by up to 50%.'
     ],
     skills: ['HTML', 'CSS', 'Vue', 'Laravel', 'Mongodb', 'MySQL']
   },

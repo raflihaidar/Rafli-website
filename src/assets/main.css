@@ -1,7 +1,6 @@
 @import 'tailwindcss';
 
 @theme {
-  --font-*: initial;
   --font-display: 'VT323', 'JetBrains Mono', monospace;
   --font-fira: 'Fira Code', monospace;
   --font-display2: poppins;

@@ -1,6 +1,6 @@
 <!-- Template Vue -->
 <template>
-  <main class="w-full h-full grid lg:grid-cols-4 grid-cols-1 gap-5 text-sm">
+  <main class="w-full h-full grid lg:grid-cols-4 grid-cols-2 gap-5 text-sm">
     <transition :css="false" v-for="(item, index) in skillFiltered" :key="index" name="card-skills">
       <a
         :href="item.url"
