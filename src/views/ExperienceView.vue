@@ -1,3 +1,11 @@
+<script setup>
+import { defineAsyncComponent, ref } from 'vue'
+import { workExperiences, achivements, activity } from '../assets/data.js'
+import { Icon } from '@iconify/vue'
+const SubTittleComponent = defineAsyncComponent(() => import('../components/BaseSubTittle.vue'))
+const isHidden = ref(null)
+</script>
+
 <template>
   <section id="experience">
     <div class="w-[80%] mx-auto py-20">
@@ -202,11 +210,3 @@
     </div>
   </section>
 </template>
-
-<script setup>
-import { defineAsyncComponent, ref } from 'vue'
-import { workExperiences, achivements, activity } from '../assets/data.js'
-import { Icon } from '@iconify/vue'
-const SubTittleComponent = defineAsyncComponent(() => import('../components/BaseSubTittle.vue'))
-const isHidden = ref(null)
-</script>

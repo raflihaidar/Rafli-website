@@ -62,7 +62,7 @@
                   digital solutions
                 </p>
               </div>
-              <div class="w-full flex items-center gap-x-5 mt-10">
+              <!-- <div class="w-full flex items-center gap-x-5 mt-10">
                 <button
                   class="bg-green-600 rounded-lg py-3 flex-grow text-sm lg:text-xl font-bold cursor-pointer"
                 >
@@ -73,7 +73,7 @@
                 >
                   <Icon icon="bytesize:download" class="size-5 lg:size-6" />
                 </button>
-              </div>
+              </div> -->
             </div>
           </section>
         </section>
@@ -101,12 +101,12 @@
                 class="flex flex-col lg:flex-row justify-start lg:justify-between lg:items-center"
               >
                 <h4>Telkom University</h4>
-                <p class="text-xs lg:text-sm">Sept 2022 - Present</p>
+                <p class="text-xs lg:text-sm">Sept 2022 - Aug 2026</p>
               </div>
               <div class="flex flex-col lg:flex-row">
                 <p class="text-xs lg:text-sm">Information Technology</p>
                 <span class="hidden lg:block text-sm mx-2">-</span>
-                <p class="text-xs lg:text-sm">GPA : 3.78</p>
+                <p class="text-xs lg:text-sm">GPA : 3.79</p>
               </div>
             </div>
           </div>

@@ -1,5 +1,19 @@
 export const workExperiences = [
   {
+    id: 6,
+    title: 'Front-end Developer',
+    company: 'PT. Rahadyan Integrasi Nusantara',
+    date: 'Feb 2026 - Present',
+    tasks: [
+      'Successfully developed 6 web applications tailored to client requirements, achieving 100% project completion within scope and timeline.',
+      'Achieved an average page load time of 2.17 seconds across 18 tested pages/features, surpassing the 3-second performance target and improving overall rendering speed.',
+      'Delivered 6 out of 8 sprint tasks on schedule while maintaining responsive design across 16 tested browser and device scenarios (81% compatibility success rate).',
+      'Maintained clean, optimized code through dead code removal, code splitting, and asset compression, alongside consistent self-testing to minimize critical bugs before QA handoff.',
+      'Achieved an overall performance score of 3.8/5 (Exceed Expectation) in the semi-annual performance review, reflecting strong collaboration with backend developers, designers, and project managers.'
+    ],
+    skills: ['JavaScript', 'Vue', 'Bootstrap', 'Tailwind']
+  },
+  {
     id: 5,
     title: 'Front-end Developer',
     company: 'PT. Raja Teknologi Digital',

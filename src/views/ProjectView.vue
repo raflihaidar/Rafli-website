@@ -63,6 +63,7 @@ import Mahha from '../assets/img/Mahha dii Meru.webp'
 import SocialIcon from '../components/BaseSocialIcon.vue'
 import SSC from '../assets/img/ssc.png'
 import ERP from '../assets/img/ERP_Jeans.webp'
+import AyoPramuka from '../assets/img/AyoPramukaKwarnas.png'
 // import gmail from '../assets/img/Gmail-clone.png'
 
 const projects = ref([
@@ -100,6 +101,18 @@ const projects = ref([
     technologies: ['Vue js', 'Tailwind CSS', 'GSAP'],
     repo: '',
     preview: 'https://mahharesorts.com/'
+  },
+  {
+    id: 3,
+    name: 'AyoPramuka Kwarnas',
+    category: 'Website',
+    project_date: 'Feb 2026 - Present',
+    img: AyoPramuka,
+    description:
+      'a company profile website for a resort located in Bogor to enhance online presence and brand visibility.',
+    technologies: ['Vue js', 'Tailwind CSS', 'Bootstrap'],
+    repo: '',
+    preview: 'https://ayopramuka-kwarnas.id/jelajah'
   }
 ])
 </script>
